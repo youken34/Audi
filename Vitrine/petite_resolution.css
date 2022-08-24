@@ -1,0 +1,15 @@
+.banner h1,h2,a {
+    color: rgb(0, 0, 0);
+    
+}
+
+.banner {
+    background-color: blue;
+}
+
+p
+    {
+        color: red; 
+        background-color: black;
+        font-size: 1.2em;
+    }
