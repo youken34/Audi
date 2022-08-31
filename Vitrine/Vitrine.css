@@ -234,9 +234,7 @@ body {
     color: #000000;
     opacity: 1;
 }
-/* .anim-nav a{
-    color: #000000;
-} */
+
 
 
 #footer {
@@ -284,7 +282,7 @@ body {
     height: 40px;
 }
 
-#footer .footer-group li:hover {
+#footer .footer-group a:hover {
     text-decoration: underline;
 }
 @media all and (max-width: 1400px) {

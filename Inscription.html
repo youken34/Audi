@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="Inscription.css">
     <link rel="stylesheet" media="@media all and (max-width: 1200px) and (min-width: 600px)" href="petitFormulaire.css" />
 </head>
-<body>
+<body onload="demarrer()">
     <nav class="banner">
         <a href="http://localhost:3000/Vitrine/Vitrine.html">Accueil</a>
         <a href="">Nos modèles</a>
         <a href="http://localhost:3000/Inscription.html">Inscription</a>
         <a href="">À propos</a>
     </nav>
+    <div class="banner2"></div>
     <div class="container">
     <div class="formulaire">
         <input type="text" name="nom" placeholder="Nom">
@@ -23,5 +24,64 @@
         <input type="text" name="mail" placeholder="Mail">
         <input type="submit" id="envoyer">
     </div>
+    </div>
+    <div class="banner3"></div>
+    <section id="footer">
+        <div class="flex-container">
+            <div class="footer-group">
+
+                <h2>Accès rapides</h2>
+                <ul>
+                    <b>
+                        <li><a href="">Tous les modèles</a></li>
+                        <li><a href="">Recherche de véhicules neufs</a></li>
+                        <li><a href="">Véhicules d'occasion disponibles</a></li>
+                        <li><a href="">Offres pour les professionnels</a></li>
+                        <li><a href="">Demander un essai</a></li>
+                        <li><a href="">Trouver mon Partenaire Audi</a></li>
+                    </b>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <h2>Modèles</h2>
+                <ul>
+                    <b>
+                        <li><a href="">Électrique</a></li>
+                        <li><a href="">Hybride rechargeable</a></li>
+                        <li><a href="">Citadine</a></li>
+                        <li><a href="">Berline</a></li>
+                        <li><a href="">SUV</a></li>
+                    </b>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <h2>Votre Audi</h2>
+                <ul>
+                    <b>
+                        <li><a href="">Entretenir et réparer mon Audi</a></li>
+                        <li><a href="">Offres Après-Vente</a></li>
+                        <li><a href="">Accessoires et équipements</a></li>
+                        <li><a href="">Espace personnel myAudi</a></li>
+                        <li><a href="">Audi connect</a></li>
+                        <li><a href="">Audi Assistance</a></li>
+                    </b>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <h2>Achat et location</h2>
+                <ul>
+                    <b>
+                        <li><a href="">Offres du moment</a></li>
+                        <li><a href="">Configurer mon Audi</a></li>
+                        <li><a href="">Garanties Audi</a></li>
+                        <li><a href="">Financer mon Audi</a></li>
+                    </b>
+                </ul>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
+
+<script src="inscription.js"></script>

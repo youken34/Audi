@@ -1,14 +1,20 @@
 
 body {
     margin: 0;
-    background-color:rgb(184, 222, 255);
-    
+    background-color:rgb(0, 0, 0)
 }
 .container{
+    transition: 0.8s;
+    opacity: 0;
+    transform: translateY(-100%);
+    z-index: 2;
     position: relative;
     justify-content: flex-start;
     background-color: black;
     top: 150px;
+    height: 500px;
+    border-bottom : 2px solid black;
+    border-top:  2px solid black;
 }
 #envoyer{
     color: rgb(0, 0, 0);
@@ -30,15 +36,17 @@ body {
 }
 
 #envoyer:hover{
-    transform: scale(1.2) rotate(-15deg);
+    transform: translateY(-10px);
 }
 .formulaire {
-    /* padding-top: 50px; */
+    transition: 0.8s;
+    opacity: 0;
+    transform: translateX(100%);
     z-index: 10;
     display: flex;
     flex-direction: column;
     background: rgb(255, 255, 255);
-    height: 500px;
+    height: 100%;
     width: 350px;
     position: relative;
     justify-content: space-around;
@@ -65,7 +73,7 @@ body {
     color: rgb(1, 1, 1);
 }
 .banner {
-    background-color: transparent;
+    background-color: #000000;
     position: fixed;
     width: 100%;
     opacity: 1;
@@ -92,4 +100,80 @@ a {
 
 .banner a:hover {
     border-bottom: 4px solid rgb(10, 142, 223);
+}
+
+.banner2 {
+    position: relative;
+    top: 150px;
+    height: 80px;
+    background-color: white;
+}
+
+.banner3 {
+    position: relative;
+    height: 80px;
+    background-color: white;
+    top: 150px;
+    z-index: 1;
+}
+
+
+#footer {
+    top: 150px;
+    position: relative;
+    margin-right: 0%;
+    margin-left: 0%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: #000000;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+    height: 400px;
+}
+
+#footer .flex-container {
+    display: flex;
+}
+
+#footer .footer-group {
+    width: 200px;
+    flex-grow: 1;
+}
+
+#footer .footer-group a {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: AudiType, sans-serif;
+
+}
+
+#footer .footer-group h2 {
+    color: #ffffff;
+    font-family: AudiType, sans-serif;
+    font-size: 1.3rem;
+    padding-left: 38px;
+
+}
+
+#footer .footer-group li {
+    list-style: none;
+    text-decoration: none;
+    height: 40px;
+}
+
+#footer .footer-group a:hover {
+    text-decoration: underline;
+}
+
+.anim{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+
+.animContainer{
+    transform: translateY(0%);
+    opacity: 1;
 }
