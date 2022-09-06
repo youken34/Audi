@@ -231,7 +231,6 @@ body {
 
 .anim-nav {
     background: rgb(0, 0, 0);
-    color: #000000;
     opacity: 1;
 }
 
@@ -290,10 +289,7 @@ body {
 }
 
 @media all and (max-width: 750px) {
-    .banner h1,h2,a {
-        color: rgb(0, 0, 0);
-        
-    }
+ 
     
     .banner {
         background-color: rgb(251, 251, 251);
