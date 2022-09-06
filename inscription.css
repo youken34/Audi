@@ -87,7 +87,7 @@ body {
 .banner h1,
 h2,
 a {
-    color: rgb(255, 255, 255);
+   color: rgb(255, 255, 255);
     font-family: Impact;
     font-size: 30px;
     padding-left: 20px;
@@ -176,4 +176,47 @@ a {
 .animContainer{
     transform: translateY(0%);
     opacity: 1;
+}
+#logo, #button{
+    display: none;
+}
+
+@media all and (max-width: 750px) {
+    .banner h1,h2,a {
+        color: rgb(0, 0, 0);
+        
+    }
+    
+    .banner {
+        background-color: rgb(251, 251, 251);
+        justify-content:center ;
+        height: 100px;
+    }
+    
+    .banner a{
+        display: none;
+    }
+    .banner i{        
+        color: #000;
+        line-height: 100px;
+    }
+    .banner p{
+        color: #000;
+        padding-left: 5px;        
+    }
+    .banner a:hover{
+        border:  0px;
+    }
+    #logo{
+        display:block;
+    }
+    #button{
+        position: absolute;
+        left: 0px;
+        background-color: transparent;
+        display: flex;
+        border: none;
+        width: 200px;
+    }
+  
 }

@@ -289,25 +289,31 @@ body {
 }
 
 @media all and (max-width: 750px) {
- 
+    .banner h1,h2,a {
+        color: rgb(0, 0, 0);
+        
+    }
     
     .banner {
         background-color: rgb(251, 251, 251);
         justify-content:center ;
         height: 100px;
+        
 
     }
     
     .banner a{
         display: none;
     }
-    .banner i{
-        display: flex;  
-        vertical-align: middle;
-        display: inline-block;
-        width: 200px;
+    .banner i{        
+        color: #000;
+        line-height: 100px;
     }
-
+    .banner p{
+        color: #000;
+        padding-left: 5px;
+        
+    }
     .banner a:hover{
         border:  0px;
     }
@@ -320,6 +326,7 @@ body {
         background-color: transparent;
         display: flex;
         border: none;
+        width: 200px;
     }
   
 }

@@ -1,3 +1,5 @@
+let menu = true;
+const boutonMenu = document.querySelector('i')
 
 const navigation = document.querySelector('nav');
 
@@ -10,6 +12,18 @@ window.addEventListener('scroll', () => {
 
     }
 })
+
+function Menu() {
+    console.log(menu)
+    menu = !menu
+    if (menu == true) {
+        boutonMenu.className = "fas fa-align-justify"
+    }
+    else {
+        boutonMenu.className = "close icon"
+    }
+}
+
 let timer = null;
 let tableauImage = [];
 let index = 0;
