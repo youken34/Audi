@@ -1,22 +1,66 @@
 
+const banner = document.querySelector('.banner')
 const boutonMenu = document.querySelector('#symbole')
-let menu = true;
-    function Menu() {
+const link = document.querySelector('#link')
+const liens = document.querySelectorAll('#link a')
+console.log(liens, link)
 
-        menu = !menu
-        if (menu === true) {
-            boutonMenu.className = "fas fa-align-justify"
+
+let menu = true
+
+window.addEventListener('resize', function () {
+
+    if (document.documentElement.clientWidth.toFixed() > 750) {
+        banner.style.height = "100px";
+        menu = true
+        boutonMenu.className = "fas fa-align-justify"
+        
+        var index = 0, length = liens.length;
+        for ( ; index < length; index++) {
+            liens[index].style.display = "block"
+    }
+    }
+    else {
+        var index = 0, length = liens.length;
+        for ( ; index < length; index++) {
+            liens[index].style.display = "none";
         }
-        else {
-            boutonMenu.className = "close icon"
+}
+})
+
+function MenuDepliant() {
+    menu = !menu
+    if (menu === true) {
+        boutonMenu.className = "fas fa-align-justify"
+        boutonMenu.className.remove = "close icon"
+        document.body.style.height = "200vh";
+        banner.style.height = "100px";
+        document.body.style.overflowY = "visible"
+        link.classList.remove('linkResponsive')
+        var index = 0, length = liens.length;
+        for ( ; index < length; index++) {
+            liens[index].style.display = "none";
         }
+    }
+    else {
+        boutonMenu.className = "close icon"
+        boutonMenu.className.remove = "fas fa-align-justify"
+        document.body.style.height = "100vh";
+        banner.style.height = "100%";
+        document.body.style.overflowY = "hidden"
+        link.classList.add('linkResponsive') // S'additionne seulement, ne modifie pas les propriétés
+        var index = 0, length = liens.length;
+        for ( ; index < length; index++) {
+            liens[index].style.display = "block";
+        }
+    }
 
 }
 
 const navigation = document.querySelector('nav');
 
 window.addEventListener('scroll', () => {
-    
+
     if (window.scrollY > 200) {
         navigation.classList.add('anim-nav');
     } else {
@@ -62,7 +106,7 @@ function move(params) {
 function getRandomInt(min, max) {
     min = Math.ceil(min); // Returns the smallest integer greater than or equal to its numeric argument
     max = Math.floor(max); // // Returns the greatest integer less than or equal to its numeric argument
-    console.log(Math.ceil(Math.random() * (max - min + 1)) + min -1);
+    console.log(Math.ceil(Math.random() * (max - min + 1)) + min - 1);
 }
 
 function commence() {
@@ -90,7 +134,6 @@ window.addEventListener('scroll', () => {
     const { scrollTop, clientHeight } = document.documentElement;
     // ClientHeight est la hauteur (en px) de la partie visible du client (elle peut être réduite avec l'inspecteur ou en réduisant l'onglet)
     // scrollTop est le nombre de pixel que j'ai scrollé depuis le haut du document
-    console.log(document.documentElement.clientHeight)
     const topElementToTopViewport = message.getBoundingClientRect().top;
     // getBoundingClientRect() est un objet qui stock toute les propriétés relative à la position d'une balise
     // Ici on spécifie vouloir la valeur 'top' qui indique la distance (en px) entre le haut de notre élément et le haut du client
