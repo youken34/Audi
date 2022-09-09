@@ -1,9 +1,9 @@
-
 body {
     margin: 0;
-    background-color:rgb(0, 0, 0)
+    background-color: rgb(0, 0, 0)
 }
-.container{
+
+.container {
     transition: 0.8s;
     opacity: 0;
     transform: translateY(-100%);
@@ -13,10 +13,11 @@ body {
     background-color: black;
     top: 150px;
     height: 500px;
-    border-bottom : 2px solid black;
-    border-top:  2px solid black;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
 }
-#envoyer{
+
+#envoyer {
     color: rgb(0, 0, 0);
     --police: Impact;
     font-family: var(--police);
@@ -24,20 +25,21 @@ body {
     border: none;
     height: 20px;
     margin: 0 auto;
-    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.45);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.45);
     background: white;
     position: relative;
     z-index: 10;
     transition: 0.5s;
 }
 
-#envoyer:focus{
+#envoyer:focus {
     outline: none;
 }
 
-#envoyer:hover{
+#envoyer:hover {
     transform: translateY(-10px);
 }
+
 .formulaire {
     transition: 0.8s;
     opacity: 0;
@@ -53,46 +55,52 @@ body {
     overflow: hidden;
 
 }
+
 .formulaire input[type=text] {
     width: 80%;
     margin-left: 10px;
     background-color: transparent;
-    border:none;
+    border: none;
     border-bottom: 1px solid black;
     position: relative;
     z-index: 10;
 }
 
-.formulaire input:focus{
+.formulaire input:focus {
     outline: none;
     border-bottom: 1px solid rgb(255, 7, 7);
 }
-::placeholder{
+
+::placeholder {
     --police: Impact;
     font-family: var(--police);
     color: rgb(1, 1, 1);
 }
+
+#logo,
+#button1 {
+    display: none;
+}
+
 .banner {
-    background-color: #000000;
+    background-color: transparent;
     position: fixed;
     width: 100%;
     opacity: 1;
     height: 100px;
     z-index: 10;
-    display: flex;
-    justify-content: space-between;
     transition-duration: 0.3s;
 }
+
 
 .banner h1,
 h2,
 a {
-   color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-family: Impact;
     font-size: 30px;
     padding-left: 20px;
     padding-right: 20px;
-    z-index: 10;
     height: 100px;
     line-height: 100px;
     text-decoration: none;
@@ -137,6 +145,7 @@ a {
 #footer .footer-group {
     width: 200px;
     flex-grow: 1;
+    width: 300px;
 }
 
 #footer .footer-group a {
@@ -167,58 +176,160 @@ a {
     text-decoration: underline;
 }
 
-.anim{
+.anim {
     transform: translateX(0%);
     opacity: 1;
 }
 
 
-.animContainer{
+.animContainer {
     transform: translateY(0%);
     opacity: 1;
 }
-#logo, #button{
+
+#logo,
+#button {
     display: none;
 }
 
-@media all and (max-width: 750px) {
-    .banner h1,h2,a {
-        color: rgb(0, 0, 0);
-        
+.linkResponsive a {
+    display: block;
+}
+
+#link {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media all and (max-width: 902px) {
+    #footer .flex-container {
+        display: block;
     }
-    
+
+    #footer {
+        height: 1200px;
+    }
+
+    .footer-group h2 {
+        padding-top: 20px;
+        width: 100%;
+        height: 50px;
+    }
+
+
+}
+
+@media all and (max-width: 750px) {
+    .banner p {
+        margin-top: 0px;
+    }
+    .banner h1,
+    h2,
+    a {
+        color: rgb(0, 0, 0);
+
+    }
+
+    #menuDepliant {
+        display: flex;
+        position: absolute;
+        left: 0px;
+    }
+
+
     .banner {
         background-color: rgb(251, 251, 251);
-        justify-content:center ;
-        height: 100px;
+        display: block;
+
     }
-    
-    .banner a{
+
+    #link a {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
         display: none;
+        border-bottom: 1px solid gray;
+        width: 90%;
     }
-    .banner i{        
+
+    #link a:hover {
+        border-bottom: 1px solid rgb(254, 8, 8);
+    }
+
+    .banner i {
         color: #000;
         line-height: 100px;
     }
-    .banner p{
+
+    .banner p {
         color: #000;
-        padding-left: 5px;   
-        margin-top: 0px;     
-        margin-bottom: 0px;     
+        padding-left: 5px;
+
     }
-    .banner a:hover{
-        border:  0px;
+
+    .banner a:hover {
+        border: 0px;
     }
-    #logo{
-        display:block;
+
+    #logo {
+        display: block;
     }
-    #button{
+
+
+    #button1 {
         position: absolute;
         left: 0px;
         background-color: transparent;
         display: flex;
         border: none;
-        width: 200px;
+        justify-content: center;
+        width: 100%;
     }
-  
+
+    #button1:active {
+        border: none;
+    }
+
+    .close.icon {
+        display: block;
+        position: relative;
+        top: 50px;
+        color: #000;
+        width: 25px;
+        height: 21px;
+    }
+
+    .close.icon:before {
+        display: block;
+
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background-color: currentColor;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .close.icon:after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background-color: currentColor;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .linkResponsive a {
+        display: block;
+    }
+
+    #link {
+        top: 100px;
+        position: relative;
+        display: block;
+        padding-left: 20px;
+
+    }
 }

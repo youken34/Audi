@@ -3,29 +3,72 @@ const banner = document.querySelector('.banner')
 const boutonMenu = document.querySelector('#symbole')
 const link = document.querySelector('#link')
 const liens = document.querySelectorAll('#link a')
-console.log(liens, link)
+const message = document.querySelector('#message');
+let timer = null;
+let tableauImage = [];
+let tableauImage2 = []
+let index = 0;
+let image = document.getElementById('back');
+var url = ["https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Gamme/1920x600_q4_ed1_2021_V2.jpg?imwidth=1920", "Découvrez notre nouvelle gamme de voiture 100% électrique"];
+var url2 = ["https://www.audi.fr/content/dam/nemo/fr/Service/2021/Service-2021/Entretenir/1920x600_Audi_APV_entretenir_header.jpg?imwidth=1920", "Obtenir un devis pour une réparation"];
+var url3 = ["https://www.audi.fr/content/dam/nemo/fr/Audi-Sport/2020/refonte/Audi_Desktop.png?imwidth=1920", "Découvrez l'histoire Audi Sport"];
+tableauImage.push(url, url2, url3)
+var url11 = ["https://www.audi.fr/content/dam/nemo/models/tt/tt-rs-coupe/my-2021/_update/1440x1920-1920x1920-stage/1920x1920-audi-tt-rs-coupe-desktop-TTRS_2020_1559.jpg?imwidth=1920", "Réservez un essaie de la nouvelle Audi TT RS près de chez vous"];
+var url22 = ["https://www.audi.fr/content/dam/nemo/fr/Teasers-Homepage/2022/parralax/2840x4000_mobilite_exception_q4_sportback_etron.jpg?imwidth=1920", "La gamme 100% électrique définit la mobilité de demain"];
+var url33 = ["https://www.miss-kw.com/wp-content/uploads/2021/02/149070635_10158447568359262_8729002834642434369_o-810x540.jpg", "Découvrez le chef d'oeuvre de design 100% électrique Audi e-tron GT"];
+tableauImage2.push(url11, url22, url33)
+let randTab = null
+console.log(document.documentElement.clientWidth)
+document.getElementById('output').innerHTML = tableauImage[index][1];
+document.documentElement.clientWidth.toFixed() > 750 ?
+    randTab = tableauImage : randTab = tableauImage2
 
+image.style.backgroundImage = "url(" + randTab[index][0] + ")";
 
 let menu = true
+window.addEventListener('resize', function () {
+    setInterval(function () {
+        if (document.documentElement.clientWidth.toFixed() > 750) {
+            randTab = tableauImage
+
+        } else if (document.documentElement.clientWidth.toFixed() < 750) {
+            randTab = tableauImage2
+        }
+        image.style.backgroundImage = "url(" + randTab[index][0] + ")"
+
+    }, 100)
+})
+
 
 window.addEventListener('resize', function () {
+
 
     if (document.documentElement.clientWidth.toFixed() > 750) {
         banner.style.height = "100px";
         menu = true
+        document.body.style.overflowY = "visible"
         boutonMenu.className = "fas fa-align-justify"
-        
+        message.style.transition = "0s"
         var index = 0, length = liens.length;
-        for ( ; index < length; index++) {
+        for (; index < length; index++) {
             liens[index].style.display = "block"
-    }
-    }
-    else {
-        var index = 0, length = liens.length;
-        for ( ; index < length; index++) {
-            liens[index].style.display = "none";
         }
-}
+
+
+    }
+    else if (document.documentElement.clientWidth.toFixed() < 750) {
+        message.style.transition = "0s"
+        if (menu === true) {
+            var index = 0, length = liens.length;
+            for (; index < length; index++) {
+                liens[index].style.display = "none";
+            }
+        }
+
+
+    }
+
+
 })
 
 function MenuDepliant() {
@@ -38,7 +81,7 @@ function MenuDepliant() {
         document.body.style.overflowY = "visible"
         link.classList.remove('linkResponsive')
         var index = 0, length = liens.length;
-        for ( ; index < length; index++) {
+        for (; index < length; index++) {
             liens[index].style.display = "none";
         }
     }
@@ -50,7 +93,7 @@ function MenuDepliant() {
         document.body.style.overflowY = "hidden"
         link.classList.add('linkResponsive') // S'additionne seulement, ne modifie pas les propriétés
         var index = 0, length = liens.length;
-        for ( ; index < length; index++) {
+        for (; index < length; index++) {
             liens[index].style.display = "block";
         }
     }
@@ -70,20 +113,7 @@ window.addEventListener('scroll', () => {
 })
 
 
-
-
-let timer = null;
-let tableauImage = [];
-let index = 0;
-let image = document.getElementById('back');
-var url = ["https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Gamme/1920x600_q4_ed1_2021_V2.jpg?imwidth=1920", "Découvrez notre nouvelle gamme de voiture 100% électrique"];
-var url2 = ["https://www.audi.fr/content/dam/nemo/fr/Service/2021/Service-2021/Entretenir/1920x600_Audi_APV_entretenir_header.jpg?imwidth=1920", "Obtenir un devis pour une réparation"];
-var url3 = ["https://www.audi.fr/content/dam/nemo/fr/Audi-Sport/2020/refonte/Audi_Desktop.png?imwidth=1920", "Découvrez l'histoire Audi Sport"];
-tableauImage.push(url, url2, url3)
-document.getElementById('output').innerHTML = tableauImage[index][1];
-image.style.backgroundImage = "url(" + tableauImage[index][0] + ")";
-
-function move(params) {
+function move(params, tableauImage) {
     if (tableauImage[index + params]) {
         index = index + params
         // image.style.backgroundSize = "unset";
@@ -108,26 +138,27 @@ function getRandomInt(min, max) {
     max = Math.floor(max); // // Returns the greatest integer less than or equal to its numeric argument
     console.log(Math.ceil(Math.random() * (max - min + 1)) + min - 1);
 }
-
+let x = 100
 function commence() {
     let rand = 0
     timer = setInterval(function () {
-        move(1);
+        document.documentElement.clientWidth.toFixed() > 750 ?
+        randTab = tableauImage : randTab = tableauImage2
         // Le bout de code sert à faire en sorte que si l'on clique pour déplacer une image, le déplacement automatique d'image s'anulle pour les 3 prochaines secondes
         document.getElementById('button').onclick = function () {
-            move(-1)
+            move(-1, randTab)
             clearInterval(timer);
             return commence();
         },
             document.getElementById('button2').onclick = function () {
-                move(1)
+                move(1, randTab)
                 clearInterval(timer);
                 return commence();
             }
+        x = 3000     
 
-    }, 3000);
+    }, x);
 }
-const message = document.querySelector('#message');
 
 window.addEventListener('scroll', () => {
 
@@ -142,5 +173,6 @@ window.addEventListener('scroll', () => {
     }
     else {
         message.classList.remove('active')
+        message.style.transition = "1s"
     }
 })

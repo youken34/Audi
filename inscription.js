@@ -7,12 +7,12 @@ function demarrer() {
     if (container.getBoundingClientRect().top.toFixed() < 300) {
         container.classList.add('animContainer')
         formulaire.style.transitionDelay = "0.8s"
-        setTimeout(formulaire.classList.add('anim'), 1000000); 
+        setTimeout(formulaire.classList.add('anim')); 
 
     }
     else{
         container.classList.remove('animContainer')
-        setTimeout(formulaire.classList.add('anim'), 3000); 
+        setTimeout(formulaire.classList.add('anim')); 
 
     }
 }
