@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Vitrine.css">
+    <link rel="stylesheet" href="Inscription.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <title>Audi</title>
-</head>
+    <title>Inscription</title>
 
-<body onload="commence()">
+</head>
+<body onload="demarrer()">
     <nav class="banner">
         <div id="button1" >
         <a id="menuDepliant" href="javascript:void(0)" onclick="MenuDepliant()">
@@ -32,43 +31,17 @@
             <a href="">À propos</a>
         </div>
     </nav>
-
-    <div>
-        <video autoplay muted loop id="myVideo">
-            <source src="../Fichier mp4/Presentation.mp4">
-        </video>
+    <div class="banner2"></div>
+    <div class="container">
+    <div class="formulaire">
+        <input type="text" name="nom" placeholder="Nom">
+        <input type="text" name="prenom" placeholder="Prenom">
+        <input type="text" name="numero" placeholder="Numéro">
+        <input type="text" name="mail" placeholder="Mail">
+        <input type="submit" id="envoyer">
     </div>
-
-    <div class="banner2">
-        <div class="carré">
-            <h1>Actualités</h1>
-        </div>
     </div>
-    <div class="background" id="back">
-        <button id="button" class="left"></button>
-        <button id="button2" class="right"></button>
-        <div id="message">
-            <p id="output"></p>
-            <button>Voir</button>
-        </div>
-    </div>
-    <div class="banner3">
-    </div>
-    <div class="monAudi">
-        <div class="textAudi">
-            <h1>Entrez dans l’univers Audi grâce à votre espace personnel
-                <strong>myAudi</strong>
-            </h1>
-            <div id="rand">
-                <a href="">Se connecter / S'inscrire</a>
-                <a href="">En savoir plus</a>
-            </div>
-        </div>
-        <img src="https://www.audi.fr/content/dam/nemo/fr/Teasers-Homepage/2022/myaudi-benefit-teaser/image-information-M.jpg?imwidth=845"
-            alt="">
-    </div>
-    <div class="banner3">
-    </div>
+    <div class="banner3"></div>
     <section id="footer">
         <div class="flex-container">
             <div class="footer-group">
@@ -125,7 +98,6 @@
     </section>
 
 </body>
-
 </html>
-<script src="Vitrine.js">
-</script>
+
+<script src="inscription.js"></script>

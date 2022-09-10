@@ -10,7 +10,7 @@ body {
     z-index: 2;
     position: relative;
     justify-content: flex-start;
-    background-color: black;
+    background-color: rgb(192, 166, 154);
     top: 150px;
     height: 500px;
     border-bottom: 2px solid black;
@@ -41,6 +41,7 @@ body {
 }
 
 .formulaire {
+    border-right: 2px solid black;
     transition: 0.8s;
     opacity: 0;
     transform: translateX(100%);
@@ -57,7 +58,7 @@ body {
 }
 
 .formulaire input[type=text] {
-    width: 80%;
+    width: 90%;
     margin-left: 10px;
     background-color: transparent;
     border: none;
@@ -201,6 +202,12 @@ a {
     justify-content: space-between;
 }
 
+.anim-nav {
+    background: rgb(0, 0, 0);
+    opacity: 1;
+}
+
+
 @media all and (max-width: 902px) {
     #footer .flex-container {
         display: block;
@@ -219,10 +226,12 @@ a {
 
 }
 
+
 @media all and (max-width: 750px) {
     .banner p {
         margin-top: 0px;
     }
+
     .banner h1,
     h2,
     a {
@@ -235,7 +244,9 @@ a {
         position: absolute;
         left: 0px;
     }
-
+    .formulaire{
+        transition: none;
+    }
 
     .banner {
         background-color: rgb(251, 251, 251);
@@ -331,5 +342,11 @@ a {
         display: block;
         padding-left: 20px;
 
+    }
+}
+
+@media all and (max-width: 700px) {
+    .formulaire {
+        width: 100%;
     }
 }
