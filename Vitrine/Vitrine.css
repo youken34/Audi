@@ -6,7 +6,6 @@ button:active {
 
 .monAudi {
     position: relative;
-    top: -20px;
     display: flex;
     background-color: #000000;
     width: 100%;
@@ -209,9 +208,6 @@ body {
 
 .banner3 {
     height: 80px;
-    display: flex;
-    justify-content: center;
-
 }
 
 .carré {
@@ -243,7 +239,6 @@ body {
 
 #footer {
     position: relative;
-    top: -25px;
     margin-right: 0%;
     margin-left: 0%;
     margin-bottom: 0;
