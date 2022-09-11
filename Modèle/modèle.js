@@ -5,6 +5,23 @@ const banner = document.querySelector('.banner')
 const link = document.querySelector('#link')
 const liens = document.querySelectorAll('#link a')
 console.log(document.documentElement.clientWidth)
+const fleche = document.querySelector('#fleche')
+const trier = document.querySelector('.trier')
+let flipped = false
+
+
+fleche.onclick = function () {
+    flipped = !flipped
+    flipped == true ? fleche.style.transform = "translate3d(0,-50%,0) rotate(315deg)"  : fleche.style.transform = "translate3d(0,-50%,0) rotate(135deg)" 
+} 
+trier.onclick = function () {
+    flipped = !flipped
+    flipped == true ? fleche.style.transform = "translate3d(0,-50%,0) rotate(315deg)"  : fleche.style.transform = "translate3d(0,-50%,0) rotate(135deg)" 
+    console.log(flipped)
+} 
+    
+    
+    
 
 
 window.addEventListener('resize', function () {
@@ -76,3 +93,65 @@ window.addEventListener('scroll', () => {
 
     }
 })
+
+const voitures = [
+    {
+        modèle: "Audi e-tron",
+        consommation: "24,3-22,0 kWh/100km",
+        emission: "Émissions de CO2 mixtes : 0 g/km",
+        image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/genaa/2021.png?imwidth=250",
+        prix: "78 800,00 EUR"
+    },
+    {
+        modèle: "Audi e-tron Sportback",
+        consommation: "24,3-22,0 kWh/100km",
+        emission: "Émissions de CO2 mixtes : 0 g/km",
+        image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/geaaa/2021.png?imwidth=250",
+        prix: "81 400,00 EUR"
+    },
+    {
+        modèle: "Audi e-tron S",
+        consommation: "24,3-22,0 kWh/100km",
+        emission: "Émissions de CO2 mixtes : 0 g/km",
+        image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/gens/2021.png?imwidth=250",
+        prix: "96 600,00 EUR"
+    },
+    {
+        modèle: "Audi e-tron S Sportback",
+        consommation: "24,3-22,0 kWh/100km",
+        emission: "Émissions de CO2 mixtes : 0 g/km",
+        image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/geas/2021.png?imwidth=250",
+        prix: "99 200,00 EUR"
+    },
+    {
+        modèle: "Audi RS e-tron GT",
+        consommation: "21,7-20,6 kWh/100km",
+        emission: "Émissions de CO2 mixtes : 0 g/km",
+        image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/f83rh7/2022.png?imwidth=250",
+        prix: "132 220,00 EUR"
+    },
+    {
+        modèle: "S3	Sportback",
+        consommation: "8,2-8,0 l/100km",
+        emission: "Émissions de CO2 mixtes : 0 g/km",
+        image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/8yas3/2021.png?imwidth=250",
+        prix: "132 220,00 EUR"
+    },
+    {
+        modèle: "S3	Berline",
+        consommation: "9,5-9,0 l/100km",
+        emission: "Émissions de CO2 mixtes : 0 g/km",
+        image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/8yss3/2021.png?imwidth=250",
+        prix: "132 220,00 EUR"
+    },
+    {
+        modèle: "RS 3 Sportback",
+        consommation: "24,3-22,0 kWh/100km",
+        emission: "Émissions de CO2 mixtes : 0 g/km",
+        image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/8yarwy/2022.png?imwidth=250",
+        prix: "132 220,00 EUR"
+    },
+
+
+
+]

@@ -1,6 +1,23 @@
 *{
     margin: 0;
 }
+.trier{
+    font-weight: 700 ;
+    font-size: 1.8rem;
+    margin-left: 20px;
+    font-family: AudiTypeWide,sans-serif;
+    cursor:pointer;
+}
+
+.banner3 {
+    position: relative;
+    height: 80px;
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 #backgroundImage{
 
     background-image: url("https://www.audi.fr/content/dam/nemo/fr/Offres-Audi/Accueil/1920x600_eGT_2021_2310.jpg?imwidth=1920");
@@ -11,7 +28,68 @@
 }
 body{
     height: 100vh;
+    background-color: #F2F2F2;
 }
+
+#voitures{
+    height: 300px;
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#app{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    width: 81%;
+    flex-wrap: wrap;
+}
+
+.modele{
+    margin-top: 50px;
+    height: 200px;
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.information{
+    color: #000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 50px;
+    border:  1px solid #000;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 100;
+    font-family: AudiTypeWide,sans-serif;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+.information:hover{
+    background-color: #000;
+    color: #F2F2F2;
+}
+
+
+#titre{
+padding-left: 20px;
+padding-top: 20px;
+    color: rgb(42, 30, 44);
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: AudiTypeWide,sans-serif;
+}
+
 #logo,
 #button1 {
     display: none;
@@ -31,7 +109,7 @@ body{
 .banner h1,
 h2,
 a {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-family: Impact;
     font-size: 30px;
     padding-left: 20px;
@@ -53,6 +131,28 @@ a {
     display: flex;
     justify-content: space-between;
 }
+
+.anim-nav {
+    background: rgb(0, 0, 0);
+    opacity: 1;
+}
+.arrow {
+    scale: 0.3;
+	position: absolute;
+    left: 140px;
+	width: 5px;
+	height: 44px;
+	background: transparent;
+	border-top: 5px solid rgb(0, 0, 0);
+	border-right: 5px solid rgb(0, 0, 0);
+	box-shadow: 0 0 0 lightgray;
+	transition: all 200ms ease;
+}	
+	.arrow.bottom {
+		transform: translate3d(0,-50%,0) rotate(135deg);
+	}
+    
+
 
 @media all and (max-width: 750px) {
     .banner p {

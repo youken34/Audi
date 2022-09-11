@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="stylesheet" href="modèle.css">
+    <script src="https://unpkg.com/vue@3.2.33/dist/vue.global.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -26,13 +27,40 @@
 
             <a href="http://localhost:3000/Vitrine/Vitrine.html">Accueil</a>
             <a href="">Nos modèles</a>
-            <a href="http://localhost:3000/Inscription.html">Inscription</a>
+            <a href="http://localhost:3000/Inscription/Inscription.html">Inscription</a>
             <a href="">À propos</a>
         </div>
     </nav>
     <div id="backgroundImage">
-
+    </div>
+    <div class="banner3">
+        <p class="trier">Trier par <a  class="arrow bottom" id="fleche"></a></p>
+    </div>
+    <div  id="app">
+        <div v-for="item in voitures">
+            <div id="voitures">
+               <p id="titre"> {{ item.modèle}}</p>
+                <div class="modele" :style="{'background-image' : 'url(' + item.image + ')'}"></div>
+                <a class="information" href="">Plus d'informations</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
 <script src="modèle.js"></script>
+<script>
+const ok = {
+     data() {
+        return {
+            voitures: voitures,
+        }
+    },
+    mounted() {
+    },
+    computed() {
+    }
+}
+const review = Vue.createApp(ok).mount('#app')
+
+
+</script>
