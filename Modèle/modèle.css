@@ -1,12 +1,42 @@
 *{
     margin: 0;
 }
+
+#filters{
+    opacity: 0;
+    transition: 1s;
+    margin-bottom: -65px;
+    position: relative;
+    height: 200px;
+    background-color: rgb(222, 222, 222);
+    display: none;
+    top: 80px;
+    box-shadow: 0px 51px 61px -39px rgba(0,0,0,0.95);
+
+}
+#filters h1{
+    cursor: pointer;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+    font-family: AudiTypeWide,sans-serif;
+    background-color: white;
+}
+#filters h1:hover{
+    background-color: #000;
+    color: white;
+}
 .trier{
+    top: 20px;
+    position: absolute;
+    z-index: 1;
     font-weight: 700 ;
     font-size: 1.8rem;
     margin-left: 20px;
     font-family: AudiTypeWide,sans-serif;
     cursor:pointer;
+    width: 160px;
 }
 
 .banner3 {
@@ -39,6 +69,8 @@ body{
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #app{
@@ -46,8 +78,8 @@ body{
     margin-right: auto;
     margin-top: 100px;
     display: flex;
-    justify-content: space-between;
-    width: 81%;
+    justify-content: flex-start;
+    width: 1280px;
     flex-wrap: wrap;
 }
 
@@ -139,7 +171,6 @@ a {
 .arrow {
     scale: 0.3;
 	position: absolute;
-    left: 140px;
 	width: 5px;
 	height: 44px;
 	background: transparent;
@@ -149,7 +180,7 @@ a {
 	transition: all 200ms ease;
 }	
 	.arrow.bottom {
-		transform: translate3d(0,-50%,0) rotate(135deg);
+		transform: translate3d(0,-50%,0) rotate(315deg);
 	}
     
 

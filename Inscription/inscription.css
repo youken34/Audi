@@ -10,9 +10,9 @@ body {
     z-index: 2;
     position: relative;
     justify-content: flex-start;
-    background-color: rgb(192, 166, 154);
+    background-image: url('https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Accueil/1920x600_univers-audi-electrique_desktop.jpg?imwidth=1920');
     top: 150px;
-    height: 500px;
+    height: 600px;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
 }

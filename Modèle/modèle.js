@@ -1,27 +1,10 @@
-console.log(document.documentElement.clientWidth)
+
 let menu = true;
 const boutonMenu = document.querySelector('#symbole')
 const banner = document.querySelector('.banner')
 const link = document.querySelector('#link')
 const liens = document.querySelectorAll('#link a')
-console.log(document.documentElement.clientWidth)
-const fleche = document.querySelector('#fleche')
-const trier = document.querySelector('.trier')
-let flipped = false
-
-
-fleche.onclick = function () {
-    flipped = !flipped
-    flipped == true ? fleche.style.transform = "translate3d(0,-50%,0) rotate(315deg)"  : fleche.style.transform = "translate3d(0,-50%,0) rotate(135deg)" 
-} 
-trier.onclick = function () {
-    flipped = !flipped
-    flipped == true ? fleche.style.transform = "translate3d(0,-50%,0) rotate(315deg)"  : fleche.style.transform = "translate3d(0,-50%,0) rotate(135deg)" 
-    console.log(flipped)
-} 
-    
-    
-    
+  
 
 
 window.addEventListener('resize', function () {
@@ -97,6 +80,7 @@ window.addEventListener('scroll', () => {
 const voitures = [
     {
         modèle: "Audi e-tron",
+        categorie: "e-tron",
         consommation: "24,3-22,0 kWh/100km",
         emission: "Émissions de CO2 mixtes : 0 g/km",
         image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/genaa/2021.png?imwidth=250",
@@ -104,6 +88,7 @@ const voitures = [
     },
     {
         modèle: "Audi e-tron Sportback",
+        categorie: "e-tron",
         consommation: "24,3-22,0 kWh/100km",
         emission: "Émissions de CO2 mixtes : 0 g/km",
         image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/geaaa/2021.png?imwidth=250",
@@ -111,6 +96,7 @@ const voitures = [
     },
     {
         modèle: "Audi e-tron S",
+        categorie: "e-tron / S",
         consommation: "24,3-22,0 kWh/100km",
         emission: "Émissions de CO2 mixtes : 0 g/km",
         image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/gens/2021.png?imwidth=250",
@@ -118,6 +104,7 @@ const voitures = [
     },
     {
         modèle: "Audi e-tron S Sportback",
+        categorie: "e-tron / S",
         consommation: "24,3-22,0 kWh/100km",
         emission: "Émissions de CO2 mixtes : 0 g/km",
         image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/geas/2021.png?imwidth=250",
@@ -125,6 +112,7 @@ const voitures = [
     },
     {
         modèle: "Audi RS e-tron GT",
+        categorie: "e-tron / Rs",
         consommation: "21,7-20,6 kWh/100km",
         emission: "Émissions de CO2 mixtes : 0 g/km",
         image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/f83rh7/2022.png?imwidth=250",
@@ -132,6 +120,7 @@ const voitures = [
     },
     {
         modèle: "S3	Sportback",
+        categorie: "S",
         consommation: "8,2-8,0 l/100km",
         emission: "Émissions de CO2 mixtes : 0 g/km",
         image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/8yas3/2021.png?imwidth=250",
@@ -139,6 +128,7 @@ const voitures = [
     },
     {
         modèle: "S3	Berline",
+        categorie: "S",
         consommation: "9,5-9,0 l/100km",
         emission: "Émissions de CO2 mixtes : 0 g/km",
         image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/8yss3/2021.png?imwidth=250",
@@ -146,6 +136,7 @@ const voitures = [
     },
     {
         modèle: "RS 3 Sportback",
+        categorie: "Rs",
         consommation: "24,3-22,0 kWh/100km",
         emission: "Émissions de CO2 mixtes : 0 g/km",
         image: "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/8yarwy/2022.png?imwidth=250",
@@ -155,3 +146,7 @@ const voitures = [
 
 
 ]
+
+function productCategories() {
+    return [...new Set(this.voitures.map(({ categorie }) => categorie))]
+}
