@@ -1,4 +1,3 @@
-
 let menu = true;
 const boutonMenu = document.querySelector('#symbole')
 const banner = document.querySelector('.banner')
