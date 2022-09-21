@@ -41,7 +41,7 @@
                 <p class="trier">Trier par <a class="arrow bottom" id="fleche" ref="fleche"></a></p>
             </div>
             <div id="filters" ref="filters">
-                <h1 v-for="i in category" @click="test(i)">
+                <h1 v-for="i in category" @click="test(i)" :ref="i">
                     {{i}}
                 </h1>
             </div>
@@ -66,21 +66,20 @@
         data() {
             return {
                 voitures: voitures,
-                flipped: false,
                 category: [],
-                affichageDefaut: []
+                affichageDefaut: [],
+                flippedFilter: false,
+                categoryChoisie: []
+
             }
         },
         created() {
-
             for (let index = 0; index < this.voitures.length; index++) {
                 this.category[index] = this.voitures[index].categorie.split(' ')[0]
-
             }
 
         },
         mounted() {
-
             let index1 = 0
             let i = "";
             for (; index1 < this.category.length; index1++) {
@@ -93,7 +92,11 @@
                 }
 
             }
-            this.affichageDefaut = this.category
+            this.affichageDefaut = [...this.voitures] // Copy without keeping the same references
+
+            for (let index = 0; index < this.category.length; index++) {
+                this.categoryChoisie.push(true)
+            }
 
         },
         computed: {
@@ -104,8 +107,9 @@
 
         },
         methods: {
+
             menu() {
-                
+
                 const fleche = this.$refs.fleche
                 const filters = this.$refs.filters
                 this.flipped = !this.flipped
@@ -119,7 +123,7 @@
                 }
             },
             afficher(categorie) {
-                
+
                 for (let index = 0; index < this.category.length; index++) {
                     regex = new RegExp(this.category[index])
                     if (regex.test(categorie) == true) {
@@ -127,26 +131,52 @@
                     }
                 }
             },
-            test(categorie){
-                let tab = []
+            changerCouleurFiltres(idFiltre) {
+                if (this.$refs[idFiltre][0].style.backgroundColor !== 'rgb(0, 0, 0)') {
 
-                for (let index = 0; index < this.voitures.length; index++) {  
-                    regex1 = new RegExp(categorie)
-                    if (regex1.test(this.voitures[index].categorie) == false) {
-                        tab.push(this.voitures[index].categorie)
-                    }        
+                    this.$refs[idFiltre][0].style.backgroundColor = "rgb(0, 0, 0)";
+                    this.$refs[idFiltre][0].style.color = "white"
+                }
+                else {
+                    this.$refs[idFiltre][0].style.backgroundColor = "rgb(255, 255 , 255)"
+                    this.$refs[idFiltre][0].style.color = "black"
                 }
 
-                for (let index1 = 0; index1 < tab.length; index1++) {
+            },
+            test(categorie) {
+                
+                this.categoryChoisie[this.category.indexOf(categorie)] = !this.categoryChoisie[this.category.indexOf(categorie)]
+                if (this.categoryChoisie[this.category.indexOf(categorie)] == true) {
+                    this.voitures = [...this.affichageDefaut]
+                    for (let index = 0; index < this.categoryChoisie.length; index++) {
+                        if (this.categoryChoisie[index] == false) {
+                            this.removeItems(this.category[index])
+                        }                        
+                    }
+                }
+                else {
+                    this.removeItems(categorie)
+                }
+                this.changerCouleurFiltres(categorie)
+            },
+            removeItems(categorie) {
+                let tab = []
+                for (let index = 0; index < this.voitures.length; index++) {
+                        regex1 = new RegExp(categorie)
+                        if (regex1.test(this.voitures[index].categorie) == false) {
+                            tab.push(this.voitures[index].categorie)
+                        }
+                    }
+                    for (let index1 = 0; index1 < tab.length; index1++) {
                         for (let index = 0; index < this.voitures.length; index++) {
                             regex = new RegExp(tab[index1])
                             if (regex.test(this.voitures[index].categorie) == true && regex1.test(this.voitures[index].categorie) == false) {
                                 this.voitures.splice(index, 1)
                             }
-                        }                    
-                }
-
+                        }
+                    }
             }
+
         },
     }
     const review = Vue.createApp(ok).mount('#vue')
@@ -154,3 +184,4 @@
 
 
 </script>
+<style src="modèle.css"></style>
