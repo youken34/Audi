@@ -292,7 +292,11 @@ body {
 }
 
 @media all and (max-width: 750px) {
+    body{
+        width: 100vw;
+        overflow-x: hidden;
 
+    }
     .banner h1,
     h2,
     a {
