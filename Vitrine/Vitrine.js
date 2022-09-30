@@ -7,16 +7,15 @@ const message = document.querySelector('#message');
 let timer = null;
 let tableauImage = [];
 let tableauImage2 = []
-let tableauImage3 = []
 let index = 0;
 let image = document.getElementById('back');
-var url = ["https://www.audi.fr/content/dam/nemo/fr/Service/2021/Service-2021/Entretenir/1920x600_Audi_APV_entretenir_header.jpg?imwidth=1023", "Obtenir un devis pour une réparation"];
+var url = ["https://www.audi.fr/content/dam/nemo/fr/Service/Garantie/LPGarantie/HEADER_1920X600v2.jpg?imwidth=1920", "Garantie & Extension de garantie"];
 var url2 = ["https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Gamme/1920x600_q4_ed1_2021_V2.jpg?imwidth=1920", "La gamme 100% électrique définit la mobilité de demain"];
-var url3 = ["https://www.audi.fr/content/dam/nemo/fr/Audi-now-vehicules-disponibles/1920x600_header_audinow_17082022.jpg?imwidth=1023", "Configurez votre Audi"];
+var url3 = ["https://www.audi.fr/content/dam/nemo/fr/Entreprises/2021/refonte_aout_2021/header_Fleet/1920x600_Audi_Fleet_header_Audipros_04112021.jpg?imwidth=1920", "Audi pour les professionels"];
 tableauImage.push(url, url2, url3)
-var url11 = ["https://www.audi.fr/content/dam/nemo/fr/Service/2021/Service-2021/Entretenir/1920x1080_Audi_APV_entretenir_header.jpg?imwidth=767", "Obtenir un devis pour une réparation"];
+var url11 = ["https://www.audi.fr/content/dam/nemo/fr/Service/Garantie/LPGarantie/HEADER_1920X1080.jpg?imwidth=767", "Garantie & Extension de garantie"];
 var url22 = ["https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Gamme/1920x1080_q4_ed1_2021_V2.jpg?imwidth=767", "La gamme 100% électrique définit la mobilité de demain"];
-var url33 = ["https://www.audi.fr/content/dam/nemo/fr/Audi-now-vehicules-disponibles/1920x1080_header_audinow_17082022.jpg?imwidth=767", "Configurez votre Audi"];
+var url33 = ["https://www.audi.fr/content/dam/nemo/fr/Entreprises/2021/refonte_aout_2021/header_Fleet/1920x1080_Audi_Fleet_header_Audipros_09082021.jpg?imwidth=767", "Audi pour les professionels"];
 tableauImage2.push(url11, url22, url33)
 let randTab = null
 console.log(document.documentElement.clientWidth)
@@ -27,13 +26,10 @@ let menu = true
 window.addEventListener('resize', function () {
     let randTab = []
     setInterval(function () {
-        if (document.documentElement.clientWidth.toFixed() > 500 && document.documentElement.clientWidth.toFixed() < 800) {
-            randTab = tableauImage3
-
-        } else if (document.documentElement.clientWidth.toFixed() < 500) {
+        if (document.documentElement.clientWidth.toFixed() < 500) {
             randTab = tableauImage2
-        }
-        else if (document.documentElement.clientWidth.toFixed() > 800) {
+
+        } else if (document.documentElement.clientWidth.toFixed() > 500) {
             randTab = tableauImage
         }
         image.style.backgroundImage = "url(" + randTab[index][0] + ")"
@@ -142,16 +138,13 @@ function getRandomInt(min, max) {
 function commence() {
     let randTab = []
 
-    if (document.documentElement.clientWidth.toFixed() > 500  && document.documentElement.clientWidth.toFixed() < 800) {
-        randTab = tableauImage3
-    }
-    else if (document.documentElement.clientWidth.toFixed() >= 800) {
-        randTab = tableauImage
-    
-    } else if (document.documentElement.clientWidth.toFixed() <= 500) {
+    if (document.documentElement.clientWidth.toFixed() < 500) {
         randTab = tableauImage2
+
+    } else if (document.documentElement.clientWidth.toFixed() > 500) {
+        randTab = tableauImage
     }
-    image.style.backgroundImage = "url(" + randTab[index][0] + ")";
+    image.style.backgroundImage = "url(" + randTab[index][0] + ")"
 
     let rand = 0
     timer = setInterval(function () {

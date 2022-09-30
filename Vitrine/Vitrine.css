@@ -95,11 +95,12 @@ button:active {
     width: 100px;
     font-family: system-ui;
     color: #f1f1f1;
-    box-shadow: 0px 0px 5px 1px #717171;
     font-size: 2ch;
     transition: 0.5s;
     bottom: 10px;
     left: 10px;
+    outline: none;
+    border: none;
 }
 
 #message button:hover {
@@ -190,7 +191,6 @@ a {
     width: 100%;
     background-size: contain;
     image-rendering:optimizeQuality;
-    background-color: rgb(246, 246, 246);
 
 
 }
@@ -492,7 +492,7 @@ body {
 }
 @media all and (max-width: 500px) {
     #back {
-        background-color: transparent;
+        background-color: rgb(246, 246, 246);
     }
     
 }
