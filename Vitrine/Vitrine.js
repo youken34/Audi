@@ -10,19 +10,16 @@ let tableauImage2 = []
 let tableauImage3 = []
 let index = 0;
 let image = document.getElementById('back');
-var url = ["https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Gamme/1920x600_q4_ed1_2021_V2.jpg?imwidth=1920", "Découvrez notre nouvelle gamme de voiture 100% électrique"];
-var url2 = ["https://www.audi.fr/content/dam/nemo/fr/Service/2021/Service-2021/Entretenir/1920x600_Audi_APV_entretenir_header.jpg?imwidth=1920", "Obtenir un devis pour une réparation"];
-var url3 = ["https://www.audi.fr/content/dam/nemo/fr/Audi-Sport/2020/refonte/Audi_Desktop.png?imwidth=1920", "Découvrez l'histoire Audi Sport"];
+var url = ["https://www.audi.fr/content/dam/nemo/fr/Service/2021/Service-2021/Entretenir/1920x600_Audi_APV_entretenir_header.jpg?imwidth=1023", "Obtenir un devis pour une réparation"];
+var url2 = ["https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Gamme/1920x600_q4_ed1_2021_V2.jpg?imwidth=1920", "La gamme 100% électrique définit la mobilité de demain"];
+var url3 = ["https://www.audi.fr/content/dam/nemo/fr/Audi-now-vehicules-disponibles/1920x600_header_audinow_17082022.jpg?imwidth=1023", "Configurez votre Audi"];
 tableauImage.push(url, url2, url3)
-var url11 = ["https://www.audi.fr/content/dam/nemo/models/tt/tt-rs-coupe/my-2021/_update/1440x1920-1920x1920-stage/1920x1920-audi-tt-rs-coupe-desktop-TTRS_2020_1559.jpg?imwidth=1920", "Réservez un essaie de la nouvelle Audi TT RS près de chez vous"];
-var url22 = ["https://www.audi.fr/content/dam/nemo/fr/Teasers-Homepage/2022/parralax/2840x4000_mobilite_exception_q4_sportback_etron.jpg?imwidth=1920", "La gamme 100% électrique définit la mobilité de demain"];
-var url33 = ["https://www.audi.fr/content/dam/nemo/fr/Teasers-Homepage/2022/highlighted-car-teaser/883x883/883x833_A3_sportback_170122.jpg", "Découvrez la nouvelle Audi A3 Sportback"];
+var url11 = ["https://www.audi.fr/content/dam/nemo/fr/Service/2021/Service-2021/Entretenir/1920x1080_Audi_APV_entretenir_header.jpg?imwidth=767", "Obtenir un devis pour une réparation"];
+var url22 = ["https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Gamme/1920x1080_q4_ed1_2021_V2.jpg?imwidth=767", "La gamme 100% électrique définit la mobilité de demain"];
+var url33 = ["https://www.audi.fr/content/dam/nemo/fr/Audi-now-vehicules-disponibles/1920x1080_header_audinow_17082022.jpg?imwidth=767", "Configurez votre Audi"];
 tableauImage2.push(url11, url22, url33)
-var url111 = ["https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Gamme/1920x1080_q4_ed1_2021_V2.jpg?imwidth=767", "Découvrez notre nouvelle gamme de voiture 100% électrique"];
-tableauImage3.push(url111)
-
-
-
+let randTab = null
+console.log(document.documentElement.clientWidth)
 document.getElementById('output').innerHTML = tableauImage[index][1];
 
 
@@ -171,6 +168,8 @@ function commence() {
                 clearInterval(timer);
                 return commence();
             }
+            move(1, randTab)
+
     }, 3000);
 }
 
