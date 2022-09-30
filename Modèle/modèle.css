@@ -314,6 +314,5 @@ a {
 @media all and (max-width: 570px){
     #backgroundImage{
         background-image: url("https://www.audi.fr/content/dam/nemo/fr/Offres-Audi/Accueil/1920x1080_eGT_2021_2310.jpg?imwidth=767");
-        /* background-size: 100% 300px; */
     }
 }
