@@ -190,6 +190,8 @@ a {
     width: 100%;
     background-size: contain;
     image-rendering:optimizeQuality;
+    background-color: rgb(246, 246, 246);
+
 
 }
 
@@ -492,7 +494,5 @@ body {
     #back {
         background-color: transparent;
     }
-    .background{
-        background-size: cover;
-    }
+    
 }
