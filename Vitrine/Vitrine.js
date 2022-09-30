@@ -1,4 +1,4 @@
-
+console.log(document.documentElement.clientWidth)
 const banner = document.querySelector('.banner')
 const boutonMenu = document.querySelector('#symbole')
 const link = document.querySelector('#link')
@@ -7,6 +7,7 @@ const message = document.querySelector('#message');
 let timer = null;
 let tableauImage = [];
 let tableauImage2 = []
+let tableauImage3 = []
 let index = 0;
 let image = document.getElementById('back');
 var url = ["https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Gamme/1920x600_q4_ed1_2021_V2.jpg?imwidth=1920", "Découvrez notre nouvelle gamme de voiture 100% électrique"];
@@ -15,24 +16,28 @@ var url3 = ["https://www.audi.fr/content/dam/nemo/fr/Audi-Sport/2020/refonte/Aud
 tableauImage.push(url, url2, url3)
 var url11 = ["https://www.audi.fr/content/dam/nemo/models/tt/tt-rs-coupe/my-2021/_update/1440x1920-1920x1920-stage/1920x1920-audi-tt-rs-coupe-desktop-TTRS_2020_1559.jpg?imwidth=1920", "Réservez un essaie de la nouvelle Audi TT RS près de chez vous"];
 var url22 = ["https://www.audi.fr/content/dam/nemo/fr/Teasers-Homepage/2022/parralax/2840x4000_mobilite_exception_q4_sportback_etron.jpg?imwidth=1920", "La gamme 100% électrique définit la mobilité de demain"];
-var url33 = ["https://www.miss-kw.com/wp-content/uploads/2021/02/149070635_10158447568359262_8729002834642434369_o-810x540.jpg", "Découvrez le chef d'oeuvre de design 100% électrique Audi e-tron GT"];
+var url33 = ["https://www.audi.fr/content/dam/nemo/fr/Teasers-Homepage/2022/highlighted-car-teaser/883x883/883x833_A3_sportback_170122.jpg", "Découvrez la nouvelle Audi A3 Sportback"];
 tableauImage2.push(url11, url22, url33)
-let randTab = null
-console.log(document.documentElement.clientWidth)
-document.getElementById('output').innerHTML = tableauImage[index][1];
-document.documentElement.clientWidth.toFixed() > 750 ?
-    randTab = tableauImage : randTab = tableauImage2
+var url111 = ["https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Gamme/1920x1080_q4_ed1_2021_V2.jpg?imwidth=767", "Découvrez notre nouvelle gamme de voiture 100% électrique"];
+tableauImage3.push(url111)
 
-image.style.backgroundImage = "url(" + randTab[index][0] + ")";
+
+
+document.getElementById('output').innerHTML = tableauImage[index][1];
+
 
 let menu = true
 window.addEventListener('resize', function () {
+    let randTab = []
     setInterval(function () {
-        if (document.documentElement.clientWidth.toFixed() > 750) {
-            randTab = tableauImage
+        if (document.documentElement.clientWidth.toFixed() > 500 && document.documentElement.clientWidth.toFixed() < 800) {
+            randTab = tableauImage3
 
-        } else if (document.documentElement.clientWidth.toFixed() < 750) {
+        } else if (document.documentElement.clientWidth.toFixed() < 500) {
             randTab = tableauImage2
+        }
+        else if (document.documentElement.clientWidth.toFixed() > 800) {
+            randTab = tableauImage
         }
         image.style.backgroundImage = "url(" + randTab[index][0] + ")"
 
@@ -116,7 +121,6 @@ window.addEventListener('scroll', () => {
 function move(params, tableauImage) {
     if (tableauImage[index + params]) {
         index = index + params
-        // image.style.backgroundSize = "unset";
         image.style.transition = "1s";
         image.style.backgroundImage = "url(" + tableauImage[index][0] + ")";
         document.getElementById('output').innerHTML = tableauImage[index][1];
@@ -138,8 +142,20 @@ function getRandomInt(min, max) {
     max = Math.floor(max); // // Returns the greatest integer less than or equal to its numeric argument
     console.log(Math.ceil(Math.random() * (max - min + 1)) + min - 1);
 }
-let x = 100
 function commence() {
+    let randTab = []
+
+    if (document.documentElement.clientWidth.toFixed() > 500  && document.documentElement.clientWidth.toFixed() < 800) {
+        randTab = tableauImage3
+    }
+    else if (document.documentElement.clientWidth.toFixed() >= 800) {
+        randTab = tableauImage
+    
+    } else if (document.documentElement.clientWidth.toFixed() <= 500) {
+        randTab = tableauImage2
+    }
+    image.style.backgroundImage = "url(" + randTab[index][0] + ")";
+
     let rand = 0
     timer = setInterval(function () {
         document.documentElement.clientWidth.toFixed() > 750 ?
@@ -155,9 +171,7 @@ function commence() {
                 clearInterval(timer);
                 return commence();
             }
-        x = 3000     
-
-    }, x);
+    }, 3000);
 }
 
 window.addEventListener('scroll', () => {
