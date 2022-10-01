@@ -456,7 +456,7 @@ body {
     }
     
     .textAudi h1{
-        width: 40%;
+        width: 80%;
     }
 }
 
@@ -468,10 +468,16 @@ body {
     .monAudi img{
         width: 100%;
     }
+    #rand {
+        width: 245px;
+    }
     
 }
 
 @media all and (max-width: 902px) {
+    #rand {
+        width: 400px;
+    }
     #footer .flex-container {
         display: block;
     }
@@ -493,6 +499,12 @@ body {
 @media all and (max-width: 500px) {
     #back {
         background-color: rgb(246, 246, 246);
+    }
+    #rand a {
+        line-height: 60px;
+    }
+    .textAudi {
+        top: 300px
     }
     
 }
