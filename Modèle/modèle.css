@@ -1,43 +1,47 @@
-*{
+* {
     margin: 0;
 }
+
 /* .back{
     background-color: #FFFFFF;
     margin: 200;
 } */
-#filters{
+#filters {
     opacity: 0;
     transition: 1s;
     margin-bottom: -65px;
     position: relative;
     height: 200px;
-    background-color:transparent;
+    background-color: transparent;
     display: none;
     top: 80px;
 
 }
-#filters h1{
+
+#filters h1 {
     cursor: pointer;
     height: 50px;
     padding-left: 10px;
     padding-right: 10px;
     margin: 10px;
-    font-family: AudiTypeWide,sans-serif;
+    font-family: AudiTypeWide, sans-serif;
     background-color: rgb(255, 255, 255);
 }
-#filters h1:hover{
+
+#filters h1:hover {
     background-color: #000;
     color: white;
 }
-.trier{
+
+.trier {
     top: 20px;
     position: absolute;
     z-index: 1;
-    font-weight: 700 ;
+    font-weight: 700;
     font-size: 1.8rem;
     margin-left: 20px;
-    font-family: AudiTypeWide,sans-serif;
-    cursor:pointer;
+    font-family: AudiTypeWide, sans-serif;
+    cursor: pointer;
     width: 160px;
 }
 
@@ -50,20 +54,22 @@
     flex-direction: column;
     justify-content: center;
 }
-#backgroundImage{
 
-    background-image: url("https://www.audi.fr/content/dam/nemo/fr/Offres-Audi/Accueil/1920x600_eGT_2021_2310.jpg?imwidth=1920");
+#backgroundImage {
+
+    background-image: url("../img/etronGT.avif");
     height: 480px;
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
 }
-body{
+
+body {
     height: 100vh;
     background-color: #F2F2F2;
 }
 
-#voitures{
+#voitures {
     height: 300px;
     width: 300px;
     background-color: rgb(255, 255, 255);
@@ -75,7 +81,7 @@ body{
     margin-right: 10px;
 }
 
-#app{
+#app {
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
@@ -85,7 +91,7 @@ body{
     flex-wrap: wrap;
 }
 
-.modele{
+.modele {
     margin-top: 50px;
     height: 200px;
     width: 100%;
@@ -93,35 +99,36 @@ body{
     background-repeat: no-repeat;
 }
 
-.information{
+.information {
     color: #000;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
     height: 50px;
-    border:  1px solid #000;
+    border: 1px solid #000;
     margin-bottom: 20px;
     font-size: 15px;
     font-weight: 100;
-    font-family: AudiTypeWide,sans-serif;
+    font-family: AudiTypeWide, sans-serif;
     line-height: 50px;
     text-align: center;
     cursor: pointer;
     text-decoration: none;
 }
-.information:hover{
+
+.information:hover {
     background-color: #000;
     color: #F2F2F2;
 }
 
 
-#titre{
-padding-left: 20px;
-padding-top: 20px;
+#titre {
+    padding-left: 20px;
+    padding-top: 20px;
     color: rgb(42, 30, 44);
     font-weight: 700;
     font-size: 1.1rem;
-    font-family: AudiTypeWide,sans-serif;
+    font-family: AudiTypeWide, sans-serif;
 }
 
 #logo,
@@ -170,30 +177,34 @@ a {
     background: rgb(0, 0, 0);
     opacity: 1;
 }
+
 .arrow {
     scale: 0.3;
-	position: absolute;
-	width: 5px;
-	height: 44px;
-	background: transparent;
-	border-top: 5px solid rgb(0, 0, 0);
-	border-right: 5px solid rgb(0, 0, 0);
-	box-shadow: 0 0 0 lightgray;
-	transition: all 200ms ease;
-}	
-	.arrow.bottom {
-		transform: translate3d(0,-50%,0) rotate(315deg);
-	}
-    
+    position: absolute;
+    width: 5px;
+    height: 44px;
+    background: transparent;
+    border-top: 5px solid rgb(0, 0, 0);
+    border-right: 5px solid rgb(0, 0, 0);
+    box-shadow: 0 0 0 lightgray;
+    transition: all 200ms ease;
+}
+
+.arrow.bottom {
+    transform: translate3d(0, -50%, 0) rotate(315deg);
+}
+
 
 
 @media all and (max-width: 750px) {
     .banner p {
         margin-top: 0px;
     }
-   #app{
-    justify-content: center;
-   }
+
+    #app {
+        justify-content: center;
+    }
+
     .banner h1,
     h2,
     a {
@@ -206,7 +217,8 @@ a {
         position: absolute;
         left: 0px;
     }
-    .formulaire{
+
+    .formulaire {
         transition: none;
     }
 
@@ -305,14 +317,15 @@ a {
         padding-left: 20px;
 
     }
-    #backgroundImage{
+
+    #backgroundImage {
         position: relative;
         top: 100px;
     }
 }
 
-@media all and (max-width: 570px){
-    #backgroundImage{
-        background-image: url("https://www.audi.fr/content/dam/nemo/fr/Offres-Audi/Accueil/1920x1080_eGT_2021_2310.jpg?imwidth=767");
+@media all and (max-width: 570px) {
+    #backgroundImage {
+        background-image: url("../img/etronGT_resp.avif");
     }
 }

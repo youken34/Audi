@@ -10,7 +10,7 @@ body {
     z-index: 2;
     position: relative;
     justify-content: flex-start;
-    background-image: url('https://www.audi.fr/content/dam/nemo/fr/RubriqueElectrique/Accueil/1920x600_univers-audi-electrique_desktop.jpg?imwidth=1920');
+    background-image: url('../img/Inscription.avif');
     top: 150px;
     height: 600px;
     border-bottom: 2px solid black;
@@ -244,7 +244,8 @@ a {
         position: absolute;
         left: 0px;
     }
-    .formulaire{
+
+    .formulaire {
         transition: none;
     }
 
