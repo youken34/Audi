@@ -20,7 +20,9 @@ tableauImage2.push(url11, url22, url33)
 let randTab = null
 console.log(document.documentElement.clientWidth)
 document.getElementById('output').innerHTML = tableauImage[index][1];
-
+window.onload = function () {
+    commence();
+};
 
 let menu = true
 window.addEventListener('resize', function () {
@@ -182,3 +184,4 @@ window.addEventListener('scroll', () => {
         message.style.transition = "1s"
     }
 })
+
