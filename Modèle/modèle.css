@@ -194,15 +194,15 @@ a {
     transform: translate3d(0, -50%, 0) rotate(315deg);
 }
 
-
+@media all and (max-width: 1140px) {
+    #app {
+        justify-content: center;
+    }
+}
 
 @media all and (max-width: 750px) {
     .banner p {
         margin-top: 0px;
-    }
-
-    #app {
-        justify-content: center;
     }
 
     .banner h1,
