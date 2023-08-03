@@ -18,7 +18,6 @@ var url22 = ["../img/e-trons_resp.webp", "La gamme 100% électrique définit la 
 var url33 = ["../img/gris&noir_resp.avif", "Audi pour les professionels"];
 tableauImage2.push(url11, url22, url33)
 let randTab = null
-console.log(document.documentElement.clientWidth)
 document.getElementById('output').innerHTML = tableauImage[index][1];
 window.onload = function () {
     commence();
