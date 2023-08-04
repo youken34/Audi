@@ -1,3 +1,8 @@
+/* remove watermark */
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+    display: none;
+}
+
 button:active {
     border: none;
     box-shadow: -2px 2px 0px 0px rgb(255, 110, 110);
@@ -5,6 +10,7 @@ button:active {
 }
 
 .monAudi {
+    top: 5px;
     position: relative;
     display: flex;
     background-color: #000000;
@@ -183,11 +189,11 @@ a {
 }
 
 .background {
+    top: 6px;
     display: flex;
-    top: -4px;
     background-repeat: no-repeat;
     position: relative;
-    height: 500px;
+    height: 475px;
     width: 100%;
     background-size: contain;
     image-rendering: optimizeQuality;
@@ -199,18 +205,17 @@ a {
 
 body {
     margin: 0;
+    position: relative;
 }
 
 .banner2 {
-    height: 5px;
+    height: 0px;
     display: flex;
     justify-content: center;
 
 }
 
-.banner3 {
-    height: 80px;
-}
+
 
 .carré {
     position: relative;
@@ -240,6 +245,7 @@ body {
 
 
 #footer {
+    border-top: 2px solid #fff;
     position: relative;
     margin-right: 0%;
     margin-left: 0%;
@@ -300,6 +306,60 @@ body {
 
 }
 
+
+
+
+.arrow-container-left,
+.arrow-container-right {
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.51);
+    transition-duration: 1s;
+    position: absolute;
+    top: 45%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.arrow-container-left {
+    left: 20px;
+}
+
+.arrow-container-right {
+    right: 20px;
+}
+
+.arrow-left,
+.arrow-right {
+    width: 20px;
+    height: 20px;
+    border-top: 3px solid #000;
+    border-left: 3px solid #000;
+}
+
+.arrow-left {
+    transform: rotate(-45deg);
+    margin-left: 10px;
+}
+
+.arrow-right {
+    margin-right: 10px;
+    transform: rotate(135deg);
+}
+
+.arrow-container-left:hover {
+    transform: translateX(10px);
+}
+
+
+.arrow-container-right:hover {
+    transform: translateX(-10px);
+}
+
+
 @media all and (max-width: 1500px) {
     #message {
         display: grid;
@@ -325,6 +385,50 @@ body {
         background-color: rgb(246, 246, 246);
 
     }
+}
+
+
+@media all and (max-width: 1052px) {
+
+    .monAudi {
+        display: block;
+    }
+
+    .monAudi img {
+        width: 100%;
+    }
+
+    #rand {
+        width: 245px;
+    }
+
+}
+
+@media all and (max-width: 902px) {
+    #rand {
+        width: 400px;
+    }
+
+    #footer .flex-container {
+        display: block;
+    }
+
+    #footer {
+        height: 1200px;
+    }
+
+    .footer-group h2 {
+        padding-top: 20px;
+        width: 100%;
+        height: 50px;
+    }
+
+    .textAudi {
+        width: 21rem;
+        max-width: 100%;
+        height: 300px;
+    }
+
 }
 
 @media all and (max-width: 750px) {
@@ -467,99 +571,6 @@ body {
         width: 80%;
     }
 }
-
-@media all and (max-width: 1052px) {
-
-    .monAudi {
-        display: block;
-    }
-
-    .monAudi img {
-        width: 100%;
-    }
-
-    #rand {
-        width: 245px;
-    }
-
-}
-
-@media all and (max-width: 902px) {
-    #rand {
-        width: 400px;
-    }
-
-    #footer .flex-container {
-        display: block;
-    }
-
-    #footer {
-        height: 1200px;
-    }
-
-    .footer-group h2 {
-        padding-top: 20px;
-        width: 100%;
-        height: 50px;
-    }
-
-    .textAudi {
-        width: 21rem;
-        max-width: 100%;
-        height: 300px;
-    }
-
-}
-
-.arrow-container-left,
-.arrow-container-right {
-    transition-duration: 1s;
-    position: absolute;
-    top: 45%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-}
-
-.arrow-container-left {
-    left: 20px;
-}
-
-.arrow-container-right {
-    right: 20px;
-}
-
-.arrow-left,
-.arrow-right {
-    width: 20px;
-    height: 20px;
-    border-top: 3px solid #000;
-    border-left: 3px solid #000;
-}
-
-.arrow-left {
-    transform: rotate(-45deg);
-    margin-left: 10px;
-}
-
-.arrow-right {
-    margin-right: 10px;
-    transform: rotate(135deg);
-}
-
-.arrow-container-left:hover {
-    transform: translateX(20px);
-}
-
-.arrow-container-right:hover {
-    transform: translateX(-20px);
-}
-
-
 
 @media all and (max-width: 500px) {
     #back {

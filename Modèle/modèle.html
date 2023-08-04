@@ -58,6 +58,51 @@
             </div>
         </div>
     </div>
+    <section id="footer">
+        <div class="flex-container">
+            <div class="footer-group">
+                <h2>Accès rapides</h2>
+                <b>
+                    <a class="sub-link" href="">Tous les modèles</a></li>
+                    <a class="sub-link" href="">Recherche de véhicules neufs</a></li>
+                    <a class="sub-link" href="">Véhicules d'occasion disponibles</a></li>
+                    <a class="sub-link" href="">Offres pour les professionnels</a></li>
+                    <a class="sub-link" href="">Demander un essai</a></li>
+                    <a class="sub-link" href="">Trouver mon Partenaire Audi</a></li>
+                </b>
+            </div>
+            <div class="footer-group">
+                <h2>Modèles</h2>
+                <b>
+                    <a class="sub-link" href="">Électrique</a></li>
+                    <a class="sub-link" href="">Hybride rechargeable</a></li>
+                    <a class="sub-link" href="">Citadine</a></li>
+                    <a class="sub-link" href="">Berline</a></li>
+                    <a class="sub-link" href="">SUV</a></li>
+                </b>
+            </div>
+            <div class="footer-group">
+                <h2>Votre Audi</h2>
+                <b>
+                    <a class="sub-link" href="">Entretenir et réparer mon Audi</a></li>
+                    <a class="sub-link" href="">Offres Après-Vente</a></li>
+                    <a class="sub-link" href="">Accessoires et équipements</a></li>
+                    <a class="sub-link" href="">Espace personnel myAudi</a></li>
+                    <a class="sub-link" href="">Audi connect</a></li>
+                    <a class="sub-link" href="">Audi Assistance</a></li>
+                </b>
+            </div>
+            <div class="footer-group">
+                <h2>Achat et location</h2>
+                <b>
+                    <a class="sub-link" href="">Offres du moment</a></li>
+                    <a class="sub-link" href="">Configurer mon Audi</a></li>
+                    <a class="sub-link" href="">Garanties Audi</a></li>
+                    <a class="sub-link" href="">Financer mon Audi</a></li>
+                </b>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
@@ -146,14 +191,14 @@
 
             },
             test(categorie) {
-                
+
                 this.categoryChoisie[this.category.indexOf(categorie)] = !this.categoryChoisie[this.category.indexOf(categorie)]
                 if (this.categoryChoisie[this.category.indexOf(categorie)] == true) {
                     this.voitures = [...this.affichageDefaut]
                     for (let index = 0; index < this.categoryChoisie.length; index++) {
                         if (this.categoryChoisie[index] == false) {
                             this.removeItems(this.category[index])
-                        }            
+                        }
                     }
                 }
                 else {
@@ -164,19 +209,19 @@
             removeItems(categorie) {
                 let tab = []
                 for (let index = 0; index < this.voitures.length; index++) {
-                        regex1 = new RegExp(categorie)
-                        if (regex1.test(this.voitures[index].categorie) == false) {
-                            tab.push(this.voitures[index].categorie)
+                    regex1 = new RegExp(categorie)
+                    if (regex1.test(this.voitures[index].categorie) == false) {
+                        tab.push(this.voitures[index].categorie)
+                    }
+                }
+                for (let index1 = 0; index1 < tab.length; index1++) {
+                    for (let index = 0; index < this.voitures.length; index++) {
+                        regex = new RegExp(tab[index1])
+                        if (regex.test(this.voitures[index].categorie) == true && regex1.test(this.voitures[index].categorie) == false) {
+                            this.voitures.splice(index, 1)
                         }
                     }
-                    for (let index1 = 0; index1 < tab.length; index1++) {
-                        for (let index = 0; index < this.voitures.length; index++) {
-                            regex = new RegExp(tab[index1])
-                            if (regex.test(this.voitures[index].categorie) == true && regex1.test(this.voitures[index].categorie) == false) {
-                                this.voitures.splice(index, 1)
-                            }
-                        }
-                    }
+                }
             }
 
         },
