@@ -13,6 +13,10 @@ button:active {
     background-color: #f1f1f1;
 }
 
+.front-video {
+    height: 606px;
+}
+
 .monAudi {
     top: 5px;
     position: relative;
@@ -392,6 +396,10 @@ b {
         background-color: rgb(246, 246, 246);
 
     }
+
+    .front-video {
+        height: 514px;
+    }
 }
 
 
@@ -576,6 +584,16 @@ b {
 
     .textAudi h1 {
         width: 80%;
+    }
+}
+
+@media all and (max-width:516px) {
+    #message {
+        display: none;
+    }
+
+    .background {
+        height: 273px;
     }
 }
 
