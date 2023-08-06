@@ -1,6 +1,15 @@
+html,
+body {
+    height: 100%;
+}
+
 body {
     overflow-x: hidden;
+    margin: 0;
+    position: relative;
 }
+
+
 
 /* remove watermark */
 img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
@@ -13,8 +22,12 @@ button:active {
     background-color: #f1f1f1;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .front-video {
-    height: 606px;
+    height: 600px;
 }
 
 .monAudi {
@@ -216,10 +229,7 @@ a {
 
 
 
-body {
-    margin: 0;
-    position: relative;
-}
+
 
 .banner2 {
     height: 0px;
@@ -377,7 +387,7 @@ b {
 
 @media all and (max-width: 1535px) {
     .front-video {
-        height: 517px;
+        height: 535px;
     }
 }
 
@@ -401,28 +411,6 @@ b {
     }
 }
 
-@media all and (max-width: 700px) {
-    #message {
-        display: grid;
-        top: auto;
-        width: 100%;
-        left: 0px;
-        bottom: 0px;
-        background-color: rgb(246, 246, 246);
-        justify-content: center;
-    }
-
-    #message button {
-        width: 100%;
-        border: 0px;
-        left: 0px;
-    }
-
-    #message p {
-        font-family: Impact, fantasy;
-    }
-
-}
 
 
 @media all and (max-width: 1052px) {
@@ -439,9 +427,16 @@ b {
         scale: 0.7;
     }
 
+    /* 
+    .front-video {
+        height: 514px;
+    } */
+
     #rand {
         width: 245px;
     }
+
+
 
 }
 
@@ -465,9 +460,10 @@ b {
     }
 
     .textAudi {
+        position: absolute;
+        top: 150px;
         width: 21rem;
         max-width: 100%;
-        height: 300px;
     }
 
 }
@@ -481,6 +477,17 @@ b {
 
     }
 
+    .front-video {
+        height: 533px;
+    }
+
+    .carré {
+        scale: 0.6;
+    }
+
+    .textAudi h1 {
+        width: 80%;
+    }
 
     .banner {
         background-color: rgb(251, 251, 251);
@@ -488,17 +495,7 @@ b {
 
     }
 
-    #link a {
-        font-size: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        display: none;
-        border-bottom: 1px solid gray;
-        width: 90%;
-    }
 
-    #link a:hover {
-        border-bottom: 1px solid rgb(254, 8, 8);
-    }
 
     .banner i {
         color: #000;
@@ -513,25 +510,6 @@ b {
 
     .banner a:hover {
         border: 0px;
-    }
-
-    #logo {
-        display: block;
-    }
-
-
-    #button1 {
-        position: absolute;
-        left: 0px;
-        background-color: transparent;
-        display: flex;
-        border: none;
-        justify-content: center;
-        width: 100%;
-    }
-
-    #button1:active {
-        border: none;
     }
 
     .close.icon {
@@ -577,17 +555,20 @@ b {
 
     }
 
-    #menuDepliant {
-        display: flex;
-        position: absolute;
-        left: 0px;
+    #link a {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        display: none;
+        border-bottom: 1px solid gray;
+        width: 90%;
     }
 
+    #link a:hover {
+        border-bottom: 1px solid rgb(254, 8, 8);
+    }
 
-
-    #back {
-        justify-content: center;
-
+    #logo {
+        display: block;
     }
 
     #button,
@@ -604,13 +585,58 @@ b {
         margin-right: 15px;
     }
 
-    .carré {
-        scale: 0.6;
+    #button1 {
+        position: absolute;
+        left: 0px;
+        background-color: transparent;
+        display: flex;
+        border: none;
+        justify-content: center;
+        width: 100%;
     }
 
-    .textAudi h1 {
-        width: 80%;
+    #button1:active {
+        border: none;
     }
+
+    #menuDepliant {
+        display: flex;
+        position: absolute;
+        left: 0px;
+    }
+
+
+
+    #back {
+        justify-content: center;
+
+    }
+
+
+
+}
+
+@media all and (max-width: 700px) {
+    #message {
+        display: grid;
+        top: auto;
+        width: 100%;
+        left: 0px;
+        bottom: 0px;
+        background-color: rgb(246, 246, 246);
+        justify-content: center;
+    }
+
+    #message button {
+        width: 100%;
+        border: 0px;
+        left: 0px;
+    }
+
+    #message p {
+        font-family: Impact, fantasy;
+    }
+
 }
 
 @media all and (max-width:516px) {
@@ -640,8 +666,6 @@ b {
         line-height: 20px;
     }
 
-    .textAudi {
-        top: 300px
-    }
+
 
 }
