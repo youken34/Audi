@@ -211,6 +211,7 @@ a {
     background-size: contain;
     image-rendering: optimizeQuality;
 
+
 }
 
 
@@ -374,9 +375,9 @@ b {
     transform: translateX(-10px);
 }
 
-@media all and (max-width: 1565px) {
+@media all and (max-width: 1535px) {
     .front-video {
-        height: 514px;
+        height: 517px;
     }
 }
 
