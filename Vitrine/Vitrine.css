@@ -250,9 +250,6 @@ a {
 
 
 /* caroussel section */
-.caroussel {
-    height: stretch;
-}
 
 
 .background {
@@ -261,7 +258,6 @@ a {
     background-repeat: no-repeat;
     position: relative;
     width: 100%;
-    height: 475px;
     background-size: contain;
     image-rendering: optimizeQuality;
 
@@ -400,25 +396,7 @@ b {
     }
 }
 
-@media all and (max-width: 1500px) {
-    #message {
-        top: 265px;
-    }
-}
 
-@media all and (max-width: 1365px) {
-    #message {
-        scale: 0.9;
-        top: 245px;
-    }
-}
-
-@media all and (max-width: 1285px) {
-    #message {
-        scale: 0.8;
-        top: 225px;
-    }
-}
 
 
 
@@ -610,19 +588,11 @@ b {
         left: 0px;
     }
 
-
-
-    #back {
-        justify-content: center;
-
-    }
-
-
-
 }
 
 @media all and (max-width: 700px) {
-    #message {
+
+    /* #message {
         display: grid;
         top: auto;
         width: 100%;
@@ -630,34 +600,33 @@ b {
         bottom: 0px;
         background-color: rgb(246, 246, 246);
         justify-content: center;
+    } */
+
+    #message {
+        left: 15%;
     }
 
-    #message button {
+
+    /* #message button {
         width: 100%;
         border: 0px;
         left: 0px;
-    }
+    } */
 
-    #message p {
+    /* #message p {
         font-family: Impact, fantasy;
-    }
+    } */
 
 }
 
 @media all and (max-width:516px) {
-    #message {
+    /* #message {
         display: none;
-    }
-
-    /* .background {
-        height: 273px;
     } */
+
 }
 
 @media all and (max-width: 500px) {
-    #back {
-        background-color: rgb(246, 246, 246);
-    }
 
     #rand {
         position: absolute;
@@ -673,4 +642,60 @@ b {
 
 
 
+}
+
+/* message adjustating */
+@media all and (max-width: 1500px) {
+    #message {
+        top: 265px;
+    }
+}
+
+@media all and (max-width: 1380px) {
+    #message {
+        scale: 0.9;
+        top: 245px;
+    }
+}
+
+@media all and (max-width: 1285px) {
+    #message {
+        scale: 0.8;
+        top: 225px;
+    }
+}
+
+@media all and (max-width: 1213px) {
+    #message {
+        bottom: 0px;
+        scale: 0.7;
+        top: unset;
+    }
+}
+
+@media all and (max-width: 1115px) {
+    #message {
+        left: 200px;
+        scale: 0.6;
+    }
+}
+
+@media all and (max-width: 1115px) {
+    #message {
+        left: 135px;
+    }
+}
+
+@media all and (max-width: 940px) {
+    #message {
+        left: 100px;
+    }
+}
+
+@media all and (max-width: 800px) {
+    #message {
+        scale: 0.4;
+        left: 65px;
+        bottom: -20px;
+    }
 }

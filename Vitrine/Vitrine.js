@@ -101,6 +101,16 @@ function MenuDepliant() {
 
 const navigation = document.querySelector('nav');
 
+window.addEventListener('DOMContentLoaded', () => {
+
+    if (window.scrollY > 200) {
+        navigation.classList.add('anim-nav');
+    } else {
+        navigation.classList.remove('anim-nav');
+
+    }
+})
+
 window.addEventListener('scroll', () => {
 
     if (window.scrollY > 200) {
@@ -183,4 +193,49 @@ window.addEventListener('scroll', () => {
         message.style.transition = "1s"
     }
 })
+
+function getBackgroundImageHeight(containerElement) {
+    const backgroundImage = new Image();
+    backgroundImage.src = getComputedStyle(containerElement).backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/, '$1');
+
+    return new Promise(resolve => {
+        backgroundImage.onload = function () {
+            const containerWidth = containerElement.clientWidth;
+            const imageWidth = backgroundImage.width;
+            const imageHeight = backgroundImage.height;
+
+            const scaledImageHeight = (containerWidth / imageWidth) * imageHeight;
+            resolve(scaledImageHeight);
+        };
+    });
+}
+
+// Usage
+window.addEventListener('resize', function () {
+    const containerElement = document.getElementById('back');
+    getBackgroundImageHeight(containerElement).then(height => {
+        document.getElementById('back').style.height = `${height + 2}px`
+
+    });
+})
+window.addEventListener('load', function () {
+    const containerElement = document.getElementById('back');
+    getBackgroundImageHeight(containerElement).then(height => {
+        document.getElementById('back').style.height = `${height + 2}px`
+
+    });
+})
+
+
+setInterval(function () {
+    const containerElement = document.getElementById('back');
+    getBackgroundImageHeight(containerElement).then(height => {
+        document.getElementById('back').style.height = `${height + 2}px`
+    });
+
+}, 100)
+
+
+
+
 
