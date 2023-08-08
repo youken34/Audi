@@ -26,12 +26,8 @@ button:hover {
     cursor: pointer;
 }
 
-.front-video {
-    height: 600px;
-}
 
 .monAudi {
-    top: 5px;
     position: relative;
     display: flex;
     background-color: #000000;
@@ -78,9 +74,14 @@ button:hover {
     margin-top: 3%;
 }
 
+
+.front-video {
+    border-bottom: 1px solid #fff;
+}
+
 #myVideo {
     position: relative;
-    height: 85vh;
+    /* height: 85vh; */
     width: 100%;
     object-fit: cover;
     z-index: 2;
@@ -253,7 +254,6 @@ a {
 
 
 .background {
-    top: 6px;
     display: flex;
     background-repeat: no-repeat;
     position: relative;
@@ -390,17 +390,14 @@ b {
 
 /* end footer section */
 
-@media all and (max-width: 1535px) {
-    .front-video {
-        height: 542px;
-    }
-}
-
-
 
 
 
 @media all and (max-width: 1052px) {
+    .front-video {
+        border-bottom: 0px solid #fff;
+    }
+
 
     .monAudi {
         display: block;
@@ -412,15 +409,12 @@ b {
 
     .carré {
         scale: 0.7;
+        border: #FFFFFF solid 6px;
     }
 
     .textAudi {
         position: absolute;
         top: 150px;
-    }
-
-    .front-video {
-        height: 540px;
     }
 
     #rand {
@@ -468,6 +462,7 @@ b {
 
     .carré {
         scale: 0.6;
+        border: #FFFFFF solid 8px;
     }
 
     .textAudi h1 {

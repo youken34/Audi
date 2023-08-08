@@ -189,7 +189,6 @@ window.addEventListener('scroll', () => {
     }
     else {
         message.classList.remove('active')
-        message.style.transition = "1s"
     }
 })
 
