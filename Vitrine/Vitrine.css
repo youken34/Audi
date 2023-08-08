@@ -259,7 +259,7 @@ a {
     position: relative;
     width: 100%;
     background-size: contain;
-    image-rendering: optimizeQuality;
+    image-rendering: -webkit-optimize-contrast;
 
 
 }
@@ -590,41 +590,49 @@ b {
 
 }
 
+@media all and (max-width: 800px) and (min-width: 700px) {
+    #message {
+        scale: 0.4;
+        left: 65px;
+        bottom: -20px;
+    }
+}
+
 @media all and (max-width: 700px) {
 
-    /* #message {
+
+    #message {
+        border-radius: 10px;
+        scale: 0.5;
         display: grid;
         top: auto;
         width: 100%;
-        left: 0px;
-        bottom: 0px;
+        left: 0px !important;
         background-color: rgb(246, 246, 246);
         justify-content: center;
-    } */
-
-    #message {
-        left: 15%;
+        height: 83px;
+        bottom: 1px !important;
     }
 
-
-    /* #message button {
+    #message button {
+        color: #000;
         width: 100%;
         border: 0px;
         left: 0px;
-    } */
+        bottom: 0px !important;
+        background-image: linear-gradient(-60deg, #000000 5%, #e0e0e0 25%, #fff 100%);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
 
-    /* #message p {
+    #message p {
+        font-size: 15px;
         font-family: Impact, fantasy;
-    } */
+    }
 
 }
 
-@media all and (max-width:516px) {
-    /* #message {
-        display: none;
-    } */
 
-}
 
 @media all and (max-width: 500px) {
 
@@ -640,25 +648,53 @@ b {
         line-height: 20px;
     }
 
+}
 
+/* text audi readjustment */
 
+@media all and (max-width: 440px) {
+    .textAudi {
+        top: 90px;
+    }
+}
+
+@media all and (max-width: 380px) {
+    .textAudi {
+        scale: 0.8;
+        top: 50px;
+    }
+
+    #menuDepliant p:first-of-type {
+        display: none;
+    }
+}
+
+@media all and (max-width: 325px) {
+    .textAudi {
+        top: -5px;
+    }
+
+    #message {
+        top: 110px;
+        scale: 0.4;
+    }
 }
 
 /* message adjustating */
-@media all and (max-width: 1500px) {
+@media all and (max-width: 1500px) and (min-width: 1380px) {
     #message {
         top: 265px;
     }
 }
 
-@media all and (max-width: 1380px) {
+@media all and (max-width: 1380px) and (min-width: 1285px) {
     #message {
         scale: 0.9;
         top: 245px;
     }
 }
 
-@media all and (max-width: 1285px) {
+@media all and (max-width: 1285px) and (min-width: 1213px) {
     #message {
         scale: 0.8;
         top: 225px;
@@ -673,29 +709,18 @@ b {
     }
 }
 
-@media all and (max-width: 1115px) {
+@media all and (max-width: 1115px)and (min-width: 940px) {
     #message {
         left: 200px;
         scale: 0.6;
-    }
-}
-
-@media all and (max-width: 1115px) {
-    #message {
         left: 135px;
     }
 }
 
+
 @media all and (max-width: 940px) {
     #message {
         left: 100px;
-    }
-}
-
-@media all and (max-width: 800px) {
-    #message {
-        scale: 0.4;
-        left: 65px;
-        bottom: -20px;
+        scale: 0.5;
     }
 }

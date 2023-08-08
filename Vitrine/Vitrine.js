@@ -1,4 +1,3 @@
-console.log(document.documentElement.clientWidth)
 const banner = document.querySelector('.banner')
 const boutonMenu = document.querySelector('#symbole')
 const link = document.querySelector('#link')
@@ -193,6 +192,7 @@ window.addEventListener('scroll', () => {
         message.style.transition = "1s"
     }
 })
+
 
 function getBackgroundImageHeight(containerElement) {
     const backgroundImage = new Image();
