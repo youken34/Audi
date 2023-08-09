@@ -28,7 +28,6 @@ button:hover {
 
 
 .monAudi {
-    transform: translateY(-45px);
     transition: 1s;
     position: relative;
     display: flex;
@@ -89,55 +88,6 @@ button:hover {
     z-index: 2;
 }
 
-
-#message {
-    display: block;
-    transform: translateX(-100%);
-    opacity: 0;
-    position: absolute;
-    z-index: 2;
-    height: 155px;
-    width: 300px;
-    top: 300px;
-    left: 250px;
-    transition: 1s;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-}
-
-#message.active {
-    transform: translateX(0%);
-    opacity: 1;
-}
-
-#message p {
-    margin-top: 10px;
-    color: #000000;
-    font-family: system-ui;
-    text-align: start;
-    font-size: 2.7ch;
-    margin-left: 15px;
-    font-weight: 400;
-}
-
-#message button {
-    position: absolute;
-    background-color: #000000;
-    height: 40px;
-    width: 100px;
-    font-family: system-ui;
-    color: #f1f1f1;
-    font-size: 2ch;
-    transition: 0.5s;
-    bottom: 10px;
-    left: 10px;
-    outline: none;
-    border: none;
-}
-
-#message button:hover {
-    opacity: 0.7;
-}
 
 * {
     margin: 0;
@@ -251,24 +201,56 @@ a {
     opacity: 1;
 }
 
+.carré:hover {
+    cursor: pointer;
+}
+
+.carré:before {
+    bottom: -15px;
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    transform: translateX(-50%);
+    border-radius: 40%;
+    z-index: -1;
+    left: 95px;
+}
+
+.carré:hover:before {
+    background-color: #fff;
+    animation: fill 4s ease-out;
+}
+
+
+@keyframes fill {
+    from {
+        top: 250px;
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    to {
+        top: -40px;
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
 
 /* caroussel section */
 
 
 .background {
+    margin-block: 100px;
+    margin-inline: auto;
     display: flex;
-    background-repeat: no-repeat;
     position: relative;
-    width: 100%;
-    background-size: contain;
-    image-rendering: -webkit-optimize-contrast;
-
-
+    width: 85%;
+    background-color: rgb(255, 255, 255);
 }
 
 .arrow-container-left,
 .arrow-container-right {
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.51);
+    border: 1px solid #000;
     transition-duration: 1s;
     position: absolute;
     top: 45%;
@@ -282,11 +264,11 @@ a {
 }
 
 .arrow-container-left {
-    left: 20px;
+    left: -75px;
 }
 
 .arrow-container-right {
-    right: 20px;
+    right: -75px;
 }
 
 .arrow-left,
@@ -316,8 +298,64 @@ a {
     transform: translateX(-10px);
 }
 
+
 #back {
-    background-color: rgb(0, 0, 0) !important;
+    transition: 1s;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 55%;
+    height: 100%;
+    position: relative;
+    background-size: contain;
+}
+
+#message {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    background-color: #f3f3f3;
+    opacity: 1;
+    z-index: 2;
+    width: 45%;
+    transition: 1s;
+    padding-inline: 20px;
+}
+
+#message.active {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+#message p {
+    color: #000000;
+    font-family: system-ui;
+    text-align: start;
+    font-size: 2.7ch;
+    font-weight: 400;
+}
+
+#message button {
+    background-color: #FFF;
+    height: 40px;
+    width: 135px;
+    font-family: system-ui;
+    color: #000;
+    font-size: 2ch;
+    transition: 0.5s;
+    outline: none;
+    border: 2px solid #000;
+}
+
+#message button:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+#output {
+    font-size: 1.7rem;
+    font-style: normal;
+    font-family: AudiType-ExtendedNormal, Helvetica, Arial, sans-serif;
 }
 
 /* end caroussel section */
@@ -393,7 +431,16 @@ b {
 /* end footer section */
 
 
+@media all and (max-width: 1200px) {
+    #message p {
+        font-size: 2.2ch;
+    }
 
+    #output {
+        font-size: 1.5rem;
+    }
+
+}
 
 @media all and (max-width: 1052px) {
     .front-video {
@@ -425,6 +472,28 @@ b {
 
 
 
+}
+
+@media all and (max-width:1000px) {
+    .background {
+        flex-direction: column-reverse;
+    }
+
+    #message,
+    #back {
+        width: 100%;
+    }
+
+    #message {
+        height: 300px;
+        padding-inline: 0px;
+    }
+
+    #message h3,
+    #message button,
+    #message p {
+        margin-inline: 15px;
+    }
 }
 
 @media all and (max-width: 902px) {
@@ -587,58 +656,6 @@ b {
 
 }
 
-@media all and (max-width: 800px) and (min-width: 700px) {
-    #message {
-        scale: 0.4;
-        left: 65px;
-        bottom: -20px;
-    }
-}
-
-@media all and (max-width: 700px) {
-
-    .monAudi {
-        top: 43px;
-    }
-
-    #message {
-        border-radius: 10px;
-        scale: 1;
-        display: grid;
-        top: auto;
-        width: 100%;
-        left: 0px !important;
-        background-color: #fff;
-        justify-content: center;
-        height: 45px;
-        bottom: -43px !important;
-        border-radius: 0px;
-        opacity: 1 !important;
-    }
-
-    #message button {
-        display: none;
-        /* color: #000;
-        width: 100%;
-        border: 0px;
-        left: 0px;
-        bottom: 0px !important;
-        background-image: linear-gradient(-60deg, #000000 5%, #e0e0e0 25%, #fff 100%);
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px; */
-    }
-
-    #message p {
-        font-size: 12px;
-        color: #000;
-        line-height: 30px;
-        font-family: Impact, fantasy;
-    }
-
-}
-
-
-
 @media all and (max-width: 500px) {
 
     #rand {
@@ -681,55 +698,5 @@ b {
 @media all and (max-width: 325px) {
     .textAudi {
         top: -5px;
-    }
-
-    #message {
-        top: 110px;
-        scale: 0.4;
-    }
-}
-
-/* message adjustating */
-@media all and (max-width: 1500px) and (min-width: 1380px) {
-    #message {
-        top: 265px;
-    }
-}
-
-@media all and (max-width: 1380px) and (min-width: 1285px) {
-    #message {
-        scale: 0.9;
-        top: 245px;
-    }
-}
-
-@media all and (max-width: 1285px) and (min-width: 1213px) {
-    #message {
-        scale: 0.8;
-        top: 225px;
-    }
-}
-
-@media all and (max-width: 1213px) and (min-width: 700px) {
-    #message {
-        bottom: 0px;
-        scale: 0.7;
-        top: unset;
-    }
-}
-
-@media all and (max-width: 1115px)and (min-width: 940px) {
-    #message {
-        left: 200px;
-        scale: 0.6;
-        left: 135px;
-    }
-}
-
-
-@media all and (max-width: 940px) and (min-width: 700px) {
-    #message {
-        left: 100px;
-        scale: 0.5;
     }
 }
