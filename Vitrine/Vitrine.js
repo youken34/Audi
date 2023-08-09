@@ -185,10 +185,12 @@ window.addEventListener('scroll', () => {
     // getBoundingClientRect() est un objet qui stock toute les propriétés relative à la position d'une balise
     // Ici on spécifie vouloir la valeur 'top' qui indique la distance (en px) entre le haut de notre élément et le haut du client
     if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.8) {
+        document.getElementsByClassName('monAudi')[0].style.transform = 'translateY(0px)'
         message.classList.add('active')
     }
     else {
         message.classList.remove('active')
+        document.getElementsByClassName('monAudi')[0].style.transform = 'translateY(-45px)'
     }
 })
 
@@ -213,14 +215,14 @@ function getBackgroundImageHeight(containerElement) {
 window.addEventListener('resize', function () {
     const containerElement = document.getElementById('back');
     getBackgroundImageHeight(containerElement).then(height => {
-        document.getElementById('back').style.height = `${height + 2}px`
+        document.getElementById('back').style.height = `${height + 1}px`
 
     });
 })
 window.addEventListener('load', function () {
     const containerElement = document.getElementById('back');
     getBackgroundImageHeight(containerElement).then(height => {
-        document.getElementById('back').style.height = `${height + 2}px`
+        document.getElementById('back').style.height = `${height - 1}px`
 
     });
 })
