@@ -178,6 +178,22 @@ var carré = document.getElementsByClassName('carré')[0]
 var actualités = document.getElementById('actualités')
 
 window.addEventListener('scroll', () => {
+    var rate = 0
+    if (document.documentElement.clientWidth < 3000 && document.documentElement.clientWidth > 1000) {
+        rate = 0.9
+    }
+    else if (document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 750) {
+        rate = 1.3
+    }
+    else if (document.documentElement.clientWidth < 750 && document.documentElement.clientWidth > 550) {
+        rate = 1
+    }
+    else if (document.documentElement.clientWidth < 550 && document.documentElement.clientWidth > 450) {
+        rate = 0.8
+    }
+    else {
+        rate = 0.7
+    }
 
     const { scrollTop, clientHeight } = document.documentElement;
     // ClientHeight est la hauteur (en px) de la partie visible du client (elle peut être réduite avec l'inspecteur ou en réduisant l'onglet)
@@ -185,17 +201,28 @@ window.addEventListener('scroll', () => {
     const topElementToTopViewport = message.getBoundingClientRect().top;
     // getBoundingClientRect() est un objet qui stock toute les propriétés relative à la position d'une balise
     // Ici on spécifie vouloir la valeur 'top' qui indique la distance (en px) entre le haut de notre élément et le haut du client
-    if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.8) {
+    console.log(rate)
+
+    if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * rate) {
         carré.classList.add('hovered');
         carré.classList.remove('hovered2');
-        actualités.style.color = "#000"
+        setTimeout(() => {
+            actualités.style.color = "#000"
+        }, 250);
     }
     else {
         carré.classList.remove('hovered');
         carré.classList.add('hovered2');
-        actualités.style.color = "#fff"
+        setTimeout(() => {
+            actualités.style.color = "#fff"
+        }, 250);
+
+
     }
 })
+
+
+
 
 
 
