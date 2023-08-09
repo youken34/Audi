@@ -24,6 +24,7 @@ window.onload = function () {
     commence();
 };
 
+
 let menu = true
 // window.addEventListener('resize', function () {
 //     let randTab = []
@@ -171,6 +172,11 @@ function commence() {
     }, 5000);
 }
 
+
+/* carré filling animation */
+var carré = document.getElementsByClassName('carré')[0]
+var actualités = document.getElementById('actualités')
+
 window.addEventListener('scroll', () => {
 
     const { scrollTop, clientHeight } = document.documentElement;
@@ -180,12 +186,19 @@ window.addEventListener('scroll', () => {
     // getBoundingClientRect() est un objet qui stock toute les propriétés relative à la position d'une balise
     // Ici on spécifie vouloir la valeur 'top' qui indique la distance (en px) entre le haut de notre élément et le haut du client
     if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.8) {
-        message.classList.add('active')
+        carré.classList.add('hovered');
+        carré.classList.remove('hovered2');
+        actualités.style.color = "#000"
     }
     else {
-        message.classList.remove('active')
+        carré.classList.remove('hovered');
+        carré.classList.add('hovered2');
+        actualités.style.color = "#fff"
     }
 })
+
+
+
 
 
 // function getBackgroundImageHeight(containerElement) {

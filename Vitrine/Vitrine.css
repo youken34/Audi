@@ -77,6 +77,8 @@ button:hover {
 
 
 .front-video {
+    position: relative;
+    z-index: 0;
     border-bottom: 1px solid #fff;
 }
 
@@ -171,14 +173,15 @@ a {
     height: 0px;
     display: flex;
     justify-content: center;
-
+    position: relative;
+    z-index: 1;
 }
 
 
 
 .carré {
     position: relative;
-    background-color: #000000;
+    background-color: #fff;
     z-index: 2;
     width: 400px;
     height: 200px;
@@ -186,7 +189,6 @@ a {
     bottom: 115px;
     justify-content: center;
     border: #ffffff solid 5px;
-
 }
 
 .carré h1 {
@@ -201,45 +203,72 @@ a {
     opacity: 1;
 }
 
-.carré:hover {
-    cursor: pointer;
-}
 
 .carré:before {
     bottom: -15px;
     content: "";
     position: absolute;
     width: 400px;
-    height: 400px;
+    height: 220px;
     transform: translateX(-50%);
-    border-radius: 40%;
     z-index: -1;
-    left: 95px;
+    left: 200px;
+    border-radius: 0%;
 }
 
-.carré:hover:before {
+.carré:after {
+    top: 0px;
+    bottom: -15px;
+    content: "";
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    transform: translateX(-50%);
+    z-index: 1;
+    left: 200px;
+    border-radius: 0%;
+}
+
+.carré.hovered:before {
     background-color: #fff;
-    animation: fill 4s ease-out;
+    animation: fill 1s ease-out;
 }
 
+.carré.hovered2:after {
+    background-color: #000;
+    animation: reverse 1s ease-out;
+}
 
 @keyframes fill {
     from {
         top: 250px;
-        transform: translateX(-50%) rotate(0deg);
+        opacity: 0;
     }
 
     to {
-        top: -40px;
-        transform: translateX(-50%) rotate(360deg);
+        top: 0px;
+        opacity: 1;
     }
 }
 
+
+@keyframes reverse {
+    from {
+        height: 200px;
+        opacity: 1;
+    }
+
+    to {
+        height: 0px;
+        opacity: 0;
+    }
+}
 
 /* caroussel section */
 
 
 .background {
+    z-index: 3;
     margin-block: 100px;
     margin-inline: auto;
     display: flex;
@@ -322,10 +351,6 @@ a {
     padding-inline: 20px;
 }
 
-#message.active {
-    transform: translateX(0%);
-    opacity: 1;
-}
 
 #message p {
     color: #000000;
