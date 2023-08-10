@@ -248,6 +248,7 @@ b {
 }
 
 #footer {
+    top: 80px;
     position: relative;
     margin-right: 0%;
     margin-left: 0%;
