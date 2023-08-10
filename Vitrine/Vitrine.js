@@ -26,26 +26,14 @@ window.onload = function () {
 
 
 let menu = true
-// window.addEventListener('resize', function () {
-//     let randTab = []
 
-//     if (document.documentElement.clientWidth.toFixed() < 500) {
-//         randTab = tableauImage2
-
-//     } else if (document.documentElement.clientWidth.toFixed() > 500) {
-//         randTab = tableauImage
-//     }
-//     image.style.backgroundImage = "url(" + randTab[index][0] + ")"
-
-
-// })
 
 
 window.addEventListener('resize', function () {
 
 
     if (document.documentElement.clientWidth.toFixed() > 750) {
-        banner.style.height = "100px";
+        banner.style.height = "80px";
         menu = true
         document.body.style.overflowY = "visible"
         boutonMenu.className = "fas fa-align-justify"
@@ -78,10 +66,10 @@ function MenuDepliant() {
         boutonMenu.className = "fas fa-align-justify"
         boutonMenu.className.remove = "close icon"
         document.body.style.height = "200vh";
-        banner.style.height = "100px";
+        banner.style.height = "80px";
         document.body.style.overflowY = "visible"
         link.classList.remove('linkResponsive')
-        var index = 0, length = liens.length;
+        var index = 1, length = liens.length;
         for (; index < length; index++) {
             liens[index].style.display = "none";
         }
@@ -93,7 +81,7 @@ function MenuDepliant() {
         banner.style.height = "100%";
         document.body.style.overflowY = "hidden"
         link.classList.add('linkResponsive') // S'additionne seulement, ne modifie pas les propriétés
-        var index = 0, length = liens.length;
+        var index = 1, length = liens.length;
         for (; index < length; index++) {
             liens[index].style.display = "block";
         }
@@ -101,25 +89,22 @@ function MenuDepliant() {
 
 }
 
-const navigation = document.querySelector('nav');
-
+const navigation = document.querySelector('.banner');
 window.addEventListener('DOMContentLoaded', () => {
 
     if (window.scrollY > 200) {
-        navigation.classList.add('anim-nav');
+        navigation.style.setProperty('--banner-before-opacity', 'rgba(255, 255, 255, 1)');
     } else {
-        navigation.classList.remove('anim-nav');
-
+        navigation.style.setProperty('--banner-before-opacity', 'rgba(255, 255, 255, 0.5)');
     }
 })
 
 window.addEventListener('scroll', () => {
 
     if (window.scrollY > 200) {
-        navigation.classList.add('anim-nav');
+        navigation.style.setProperty('--banner-before-opacity', 'rgba(255, 255, 255, 1)');
     } else {
-        navigation.classList.remove('anim-nav');
-
+        navigation.style.setProperty('--banner-before-opacity', 'rgba(255, 255, 255, 0.5)');
     }
 })
 
@@ -149,7 +134,6 @@ function move(params, tableauImage) {
 function getRandomInt(min, max) {
     min = Math.ceil(min); // Returns the smallest integer greater than or equal to its numeric argument
     max = Math.floor(max); // // Returns the greatest integer less than or equal to its numeric argument
-    console.log(Math.ceil(Math.random() * (max - min + 1)) + min - 1);
 }
 function commence() {
     let randTab = tableauImage2
@@ -206,7 +190,6 @@ window.addEventListener('scroll', () => {
     const topElementToTopViewport = message.getBoundingClientRect().top;
     // getBoundingClientRect() est un objet qui stock toute les propriétés relative à la position d'une balise
     // Ici on spécifie vouloir la valeur 'top' qui indique la distance (en px) entre le haut de notre élément et le haut du client
-    console.log(rate)
 
     if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * rate) {
         carré.classList.add('hovered');

@@ -6,10 +6,17 @@ body {
     overflow-x: hidden;
 }
 
-/* .back{
-    background-color: #FFFFFF;
-    margin: 200;
-} */
+/* remove watermark */
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+    display: none;
+}
+
+
+#vue {
+    top: -5px;
+    position: relative;
+}
+
 #filters {
     opacity: 0;
     transition: 1s;
@@ -37,6 +44,10 @@ body {
     color: white;
 }
 
+#logo-fullwidth:hover {
+    opacity: 0.7;
+}
+
 .trier {
     top: 20px;
     position: absolute;
@@ -59,17 +70,20 @@ body {
     justify-content: center;
 }
 
-#backgroundImage {
+/* section etron */
 
-    background-image: url("../img/etronGT.avif");
-    height: 480px;
+.etron {
+    position: relative;
+}
+
+#backgroundImage {
     background-size: contain;
     background-repeat: no-repeat;
+    height: 100%;
     width: 100%;
 }
 
 body {
-    height: 100vh;
     background-color: #F2F2F2;
 }
 
@@ -141,31 +155,58 @@ body {
 }
 
 .banner {
-    background-color: transparent;
     position: fixed;
     width: 100%;
-    opacity: 1;
-    height: 100px;
+    height: 80px;
     z-index: 10;
     transition-duration: 0.3s;
+    --banner-before-opacity: rgba(255, 255, 255, 0.5);
+    /* Default opacity */
 }
 
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--banner-before-opacity);
+    /* Background with opacity */
+    z-index: -1;
+    /* Position behind the main content */
+}
 
 .banner h1,
 h2,
 a {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-family: Impact;
-    font-size: 30px;
+    font-size: 25px;
     padding-left: 20px;
     padding-right: 20px;
-    height: 100px;
-    line-height: 100px;
+    height: 70px;
+    line-height: 80px;
+    position: relative;
     text-decoration: none;
 }
 
-.banner a:hover {
-    border-bottom: 4px solid rgb(10, 142, 223);
+.banner a:not(:first-of-type)::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    transition: width 0.5s ease;
+    z-index: -1;
+}
+
+@media all and (min-width: 750px) {
+    .banner a:not(:first-of-type):hover::before {
+        width: 100%;
+    }
 }
 
 .linkResponsive a {
@@ -174,7 +215,7 @@ a {
 
 #link {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .anim-nav {
@@ -207,7 +248,6 @@ b {
 }
 
 #footer {
-    border-top: 2px solid #fff;
     position: relative;
     margin-right: 0%;
     margin-left: 0%;
@@ -305,6 +345,11 @@ b {
 
     }
 
+    .etron,
+    #vue {
+        top: 80px;
+    }
+
     #menuDepliant {
         display: flex;
         position: absolute;
@@ -318,7 +363,6 @@ b {
     .banner {
         background-color: rgb(251, 251, 251);
         display: block;
-
     }
 
     #link a {
@@ -335,7 +379,7 @@ b {
 
     .banner i {
         color: #000;
-        line-height: 100px;
+        line-height: 80px;
     }
 
     .banner p {
@@ -352,6 +396,9 @@ b {
         display: block;
     }
 
+    #logo-fullwidth {
+        display: none;
+    }
 
     #button1 {
         position: absolute;
@@ -370,7 +417,7 @@ b {
     .close.icon {
         display: block;
         position: relative;
-        top: 50px;
+        top: 40px;
         color: #000;
         width: 25px;
         height: 21px;
@@ -412,8 +459,7 @@ b {
     }
 
     #backgroundImage {
-        position: relative;
-        top: 100px;
+        top: 80px;
     }
 }
 

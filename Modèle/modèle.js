@@ -3,18 +3,19 @@ const boutonMenu = document.querySelector('#symbole')
 const banner = document.querySelector('.banner')
 const link = document.querySelector('#link')
 const liens = document.querySelectorAll('#link a')
-  
 
+
+const backgroundImage = document.getElementById('backgroundImage');
 
 window.addEventListener('resize', function () {
 
 
     if (document.documentElement.clientWidth.toFixed() > 750) {
-        banner.style.height = "100px";
+        banner.style.height = "80px";
         menu = true
         document.body.style.overflowY = "visible"
         boutonMenu.className = "fas fa-align-justify"
-        var index = 0, length = liens.length;
+        var index = 1, length = liens.length;
         for (; index < length; index++) {
             liens[index].style.display = "block"
         }
@@ -23,7 +24,7 @@ window.addEventListener('resize', function () {
     }
     else if (document.documentElement.clientWidth.toFixed() < 750) {
         if (menu === true) {
-            var index = 0, length = liens.length;
+            var index = 1, length = liens.length;
             for (; index < length; index++) {
                 liens[index].style.display = "none";
             }
@@ -32,7 +33,24 @@ window.addEventListener('resize', function () {
 
     }
 
+})
 
+
+window.addEventListener("resize", function () {
+    if (document.documentElement.clientWidth.toFixed() < 570) {
+        backgroundImage.src = "../img/etronGT_resp.avif";
+    }
+    else {
+        backgroundImage.src = "../img/etronGT.avif";
+    }
+})
+window.addEventListener("load", function () {
+    if (document.documentElement.clientWidth.toFixed() < 570) {
+        backgroundImage.src = "../img/etronGT_resp.avif";
+    }
+    else {
+        backgroundImage.src = "../img/etronGT.avif";
+    }
 })
 
 function MenuDepliant() {
@@ -41,10 +59,10 @@ function MenuDepliant() {
         boutonMenu.className = "fas fa-align-justify"
         boutonMenu.className.remove = "close icon"
         document.body.style.height = "200vh";
-        banner.style.height = "100px";
+        banner.style.height = "80px";
         document.body.style.overflowY = "visible"
         link.classList.remove('linkResponsive')
-        var index = 0, length = liens.length;
+        var index = 1, length = liens.length;
         for (; index < length; index++) {
             liens[index].style.display = "none";
         }
@@ -56,7 +74,7 @@ function MenuDepliant() {
         banner.style.height = "100%";
         document.body.style.overflowY = "hidden"
         link.classList.add('linkResponsive') // S'additionne seulement, ne modifie pas les propriétés
-        var index = 0, length = liens.length;
+        var index = 1, length = liens.length;
         for (; index < length; index++) {
             liens[index].style.display = "block";
         }
@@ -64,15 +82,22 @@ function MenuDepliant() {
 
 }
 
-const navigation = document.querySelector('nav');
+const navigation = document.querySelector('.banner');
+window.addEventListener('DOMContentLoaded', () => {
+
+    if (window.scrollY > 200) {
+        navigation.style.setProperty('--banner-before-opacity', 'rgba(255, 255, 255, 1)');
+    } else {
+        navigation.style.setProperty('--banner-before-opacity', 'rgba(255, 255, 255, 0.5)');
+    }
+})
 
 window.addEventListener('scroll', () => {
 
-    if (window.scrollY > 100) {
-        navigation.classList.add('anim-nav');
+    if (window.scrollY > 200) {
+        navigation.style.setProperty('--banner-before-opacity', 'rgba(255, 255, 255, 1)');
     } else {
-        navigation.classList.remove('anim-nav');
-
+        navigation.style.setProperty('--banner-before-opacity', 'rgba(255, 255, 255, 0.5)');
     }
 })
 
