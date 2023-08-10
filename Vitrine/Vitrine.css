@@ -84,7 +84,6 @@ button:hover {
 
 #myVideo {
     position: relative;
-    /* height: 85vh; */
     width: 100%;
     object-fit: cover;
     z-index: 2;
@@ -397,7 +396,7 @@ a {
     width: 135px;
     font-family: system-ui;
     color: #000;
-    font-size: 2ch;
+    font-size: 16px;
     transition: 0.5s;
     outline: none;
     border: 2px solid #000;
@@ -409,7 +408,7 @@ a {
 }
 
 #output {
-    font-size: 1.7rem;
+    font-size: 22px;
     font-style: normal;
     font-family: AudiType-ExtendedNormal, Helvetica, Arial, sans-serif;
 }
@@ -489,11 +488,11 @@ b {
 
 @media all and (max-width: 1200px) {
     #message p {
-        font-size: 2.2ch;
+        font-size: 17px;
     }
 
     #output {
-        font-size: 1.5rem;
+        font-size: 24px;
     }
 
 }
@@ -761,6 +760,8 @@ b {
         width: 402px;
         left: 197px;
     }
+
+    #message button {}
 }
 
 @media all and (max-width: 380px) {
