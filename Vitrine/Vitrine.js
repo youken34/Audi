@@ -179,20 +179,25 @@ var actualités = document.getElementById('actualités')
 
 window.addEventListener('scroll', () => {
     var rate = 0
-    if (document.documentElement.clientWidth < 3000 && document.documentElement.clientWidth > 1000) {
-        rate = 0.9
-    }
-    else if (document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 750) {
-        rate = 1.3
-    }
-    else if (document.documentElement.clientWidth < 750 && document.documentElement.clientWidth > 550) {
-        rate = 1
-    }
-    else if (document.documentElement.clientWidth < 550 && document.documentElement.clientWidth > 450) {
-        rate = 0.8
-    }
-    else {
-        rate = 0.7
+    switch (true) {
+        case (document.documentElement.clientWidth < 3000 && document.documentElement.clientWidth > 1000):
+            rate = 0.9;
+            break;
+        case (document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 750):
+            rate = 1.3;
+            break;
+        case (document.documentElement.clientWidth < 750 && document.documentElement.clientWidth > 550):
+            rate = 1;
+            break;
+        case (document.documentElement.clientWidth < 550 && document.documentElement.clientWidth > 450):
+            rate = 0.8;
+            break;
+        case (document.documentElement.clientWidth < 450 && document.documentElement.clientWidth > 400):
+            rate = 0.7;
+            break;
+        default:
+            rate = 0.6;
+            break;
     }
 
     const { scrollTop, clientHeight } = document.documentElement;

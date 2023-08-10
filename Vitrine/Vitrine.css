@@ -176,20 +176,6 @@ a {
     z-index: 1;
 }
 
-
-
-.carré {
-    position: relative;
-    background-color: #fff;
-    z-index: 2;
-    width: 400px;
-    height: 200px;
-    line-height: 200px;
-    bottom: 115px;
-    justify-content: center;
-    border: #ffffff solid 5px;
-}
-
 .anim-nav {
     background: rgb(0, 0, 0);
     opacity: 1;
@@ -204,7 +190,6 @@ a {
     height: 200px;
     line-height: 200px;
     bottom: 115px;
-    justify-content: center;
     border: #ffffff solid 5px;
     transition: 1s;
 }
@@ -296,17 +281,20 @@ a {
 
 /* caroussel section */
 
-
+.caroussel {
+    width: 85%;
+    margin-block: 100px;
+    margin-inline: auto;
+    position: relative;
+}
 
 
 .background {
     overflow: hidden;
+    width: 100%;
     z-index: 3;
-    margin-block: 100px;
-    margin-inline: auto;
     display: flex;
     position: relative;
-    width: 85%;
     background-color: rgb(255, 255, 255);
 }
 
@@ -501,7 +489,6 @@ b {
 #button2 {
     scale: 0.8;
     z-index: 3;
-
 }
 
 
@@ -557,6 +544,10 @@ b {
         width: 245px;
     }
 
+    #footer {
+        border: none;
+    }
+
 
 
 }
@@ -567,11 +558,23 @@ b {
     }
 
     .arrow-container-left {
-        left: -60px;
+        left: 40%;
     }
 
     .arrow-container-right {
-        right: -60px;
+        right: 40%;
+
+    }
+
+    .arrow-container-left,
+    .arrow-container-right {
+        top: unset;
+        bottom: -80px;
+    }
+
+    #button,
+    #button2 {
+        scale: 1;
     }
 
     #message,
@@ -592,14 +595,6 @@ b {
 }
 
 @media all and (max-width: 902px) {
-
-    .arrow-container-left {
-        left: -50px;
-    }
-
-    .arrow-container-right {
-        right: -50px;
-    }
 
     .textAudi {
         width: 21rem;
@@ -639,6 +634,15 @@ b {
     .carré {
         scale: 0.6;
         border: #FFFFFF solid 8px;
+    }
+
+    .arrow-container-left {
+        left: 30%;
+    }
+
+    .arrow-container-right {
+        right: 30%;
+
     }
 
     .textAudi h1 {
@@ -701,14 +705,6 @@ b {
         display: block;
     }
 
-    .arrow-container-left {
-        left: -40px;
-    }
-
-    .arrow-container-right {
-        right: -40px;
-    }
-
     #link {
         top: 100px;
         position: relative;
@@ -735,16 +731,8 @@ b {
 
     #button,
     #button2 {
-        scale: 0.5;
+        scale: 0.8;
 
-    }
-
-    #button {
-        margin-left: 15px;
-    }
-
-    #button2 {
-        margin-right: 15px;
     }
 
     #button1 {
@@ -785,23 +773,47 @@ b {
 
 }
 
+@media all and (max-width: 430px) {
+
+    .carré.hovered:before {
+        left: 50%;
+        /* Centre horizontalement */
+        top: 50%;
+        /* Centre verticalement */
+        transform: translate(-50%, -50%);
+        width: calc(100% + 12px);
+        /* + 12px car carré possède deux bordures de 6px chacunes */
+        height: 100%;
+    }
+
+    .carré:before {
+        left: 50%;
+        top: 150%;
+        /* Centre verticalement */
+        transform: translate(-50%, -50%);
+        width: calc(100% + 12px);
+        /* + 12px car carré possède deux bordures de 6px chacunes */
+        height: 100%;
+    }
+}
+
 /* text audi readjustment */
 
 @media all and (max-width: 440px) {
+
     .textAudi {
         top: 90px;
     }
 
-    .carré {
+    /* .carré {
         scale: 0.5;
     }
 
     .carré:before {
         width: 402px;
         left: 197px;
-    }
+    } */
 
-    #message button {}
 }
 
 @media all and (max-width: 380px) {
