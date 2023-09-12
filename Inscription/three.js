@@ -19,9 +19,9 @@ loadingManager.onProgress = function (url, loaded, total) {
 };
 
 const progressBarContainer = document.querySelector(".progress-bar-container");
-// loadingManager.onLoad = function () {
-//   progressBarContainer.style.display = "none";
-// };
+loadingManager.onLoad = function () {
+  progressBarContainer.style.display = "none";
+};
 
 const loader = new GLTFLoader(loadingManager);
 

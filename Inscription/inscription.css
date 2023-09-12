@@ -170,6 +170,24 @@ a {
     position: relative;
 }
 
+.progress-bar-container {
+    z-index: 99999999;
+    position: absolute;
+    left: 21.5%;
+    width: 78%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#progress-bar {
+    width: 30%;
+    margin-top: 0.5%;
+    height: 2%;
+}
+
 /* footer section */
 
 #footer {
