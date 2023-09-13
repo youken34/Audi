@@ -87,10 +87,24 @@ window.addEventListener("scroll", () => {
 });
 
 /* Clear form */
-const inputElements = document.querySelectorAll(
-  "input::not(input[type=submit])"
-);
-inputElements.forEach((element) => {
-  element.value = "";
-  console.log(element.value);
-});
+const inputElements = document.querySelectorAll("input:not([type=submit])");
+
+setTimeout(function () {
+  inputElements.forEach((inputElement) => {
+    console.log(inputElement.value);
+    inputElement.value = "";
+    inputElement.addEventListener("focus", function () {
+      const associatedSpan = this.parentElement.querySelector("span");
+      if (associatedSpan) {
+        associatedSpan.style.display = "flex";
+      }
+    });
+
+    inputElement.addEventListener("blur", function () {
+      const associatedSpan = this.parentElement.querySelector("span");
+      if (associatedSpan && this.value !== "") {
+        associatedSpan.style.display = "none";
+      }
+    });
+  });
+}, 1000);

@@ -8,10 +8,6 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
     display: none;
 }
 
-/* input:-internal-autofill-selected {
-    color: #000 !important;
-    background-color: #fff !important;
-} */
 
 /* Banner section */
 
@@ -81,7 +77,7 @@ a {
     position: relative;
     height: 80px;
     background-color: white;
-    top: 150px;
+    top: -4px;
     z-index: 2;
 }
 
@@ -106,14 +102,15 @@ a {
 }
 
 #envoyer {
+    font-size: calc(1vw * 1.1);
     color: rgb(255 239 239);
     --police: Impact;
     font-family: var(--police);
     width: 80%;
     border: none;
-    height: 35px;
+    height: calc(1vw * 2.3);
     margin: 0 auto;
-    background: black;
+    background: #ff9595;
     position: relative;
     z-index: 10;
     transition: 0.5s;
@@ -147,6 +144,21 @@ a {
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
+.formulaire span {
+    pointer-events: none;
+    border-radius: 5px;
+    margin-top: 2%;
+    transition: 0.25s;
+    left: 14%;
+    padding-inline: 3%;
+    height: calc(1vw * 1.1);
+    position: absolute;
+    font-weight: 400;
+    --police: Helvetica, Arial, sans-serif;
+    font-family: var(--police);
+    color: rgb(144, 144, 144);
+}
+
 .formulaire input[type=text],
 .formulaire input[type=password],
 .formulaire input[type=email] {
@@ -160,23 +172,18 @@ a {
 }
 
 
-.formulaire input:focus::placeholder,
-.formulaire input:active::placeholder {
-    position: relative;
-    z-index: 10;
+.formulaire input:focus+span,
+.formulaire input:active+span {
     transform: translateY(calc(1vw * -1));
-    background-color: #fff;
+    background-color: #ff9595;
+    color: #000;
 }
 
-
-::placeholder {
-    font-weight: 400;
-    --police: Helvetica,
-        Arial,
-        sans-serif;
-    font-family: var(--police);
-    color: rgb(144, 144, 144);
+.formulaire input:focus,
+.formulaire input:active {
+    border: 2px solid #ff9595;
 }
+
 
 .formulaire label {
     width: 80%;
@@ -185,8 +192,6 @@ a {
     font-family: Helvetica,
         Arial,
         sans-serif;
-    ;
-    /* margin-block: -25px; */
 }
 
 .frame {
@@ -198,13 +203,24 @@ a {
     overflow: hidden;
     border-radius: 50%;
     scale: 0.4;
-    border: 5px solid #000;
+    border: 5px solid #ffffff;
+    z-index: 2;
 }
 
 .frame__image {
     position: absolute;
     right: -35%;
     height: calc(5vw * 4.5);
+}
+
+.background__frame {
+    left: calc(1vw * 3.5);
+    top: calc(1vw * -17.5);
+    height: calc(2vw * 13);
+    width: calc(2vw * 13);
+    background-color: #ff9595;
+    position: absolute;
+    rotate: 30deg;
 }
 
 #logo,
@@ -248,7 +264,6 @@ a {
 
 #footer {
     z-index: 2;
-    top: 150px;
     position: relative;
     margin-right: 0%;
     margin-left: 0%;
@@ -327,11 +342,14 @@ a {
 
 
 @media all and (max-width: 1000px) {
+
     .inscription-banner {
         top: 80px;
     }
 
-    .container {
+    .container,
+    .banner3,
+    #footer {
         top: 76px;
     }
 
