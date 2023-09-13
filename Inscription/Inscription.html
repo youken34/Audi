@@ -46,9 +46,27 @@
             <div class="frame">
                 <img class="frame__image" src="../img/frame.jpg" alt="">
             </div>
-            <input autocomplete="false" type="text" name="nom" placeholder="Nom d'utilisateur">
-            <input autocomplete="false" type="email" name="mail" placeholder="Mail">
-            <input autocomplete="false" type="password" name="password" placeholder="Mot de passe">
+            <label for="nom" style="display: flex; flex-direction: column;">
+                <span style="display: flex; align-items: center;">
+                    Nom d'utilisateur
+                    <p style="color: red; margin-left: 5px;">*</p>
+                </span>
+                <input autocomplete="false" type="text" name="nom" placeholder="Nom d'utilisateur">
+            </label>
+            <label for="mail" style="display: flex; flex-direction: column;">
+                <span style="display: flex; align-items: center;">
+                    Adresse e-mail
+                    <p style="color: red;">*</p>
+                </span>
+                <input autocomplete="false" type="email" name="mail" placeholder="Adresse e-mail">
+            </label>
+            <label for="password" style="display: flex; flex-direction: column;">
+                <span style="display: flex; align-items: center;">
+                    Mot de passe
+                    <p style="color: red;">*</p>
+                </span>
+                <input autocomplete="false" type="password" name="password" placeholder="Mot de passe">
+            </label>
             <input type="submit" id="envoyer">
         </form>
         <div id="threeModel"></div>

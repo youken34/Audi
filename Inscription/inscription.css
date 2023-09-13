@@ -8,6 +8,11 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
     display: none;
 }
 
+/* input:-internal-autofill-selected {
+    color: #000 !important;
+    background-color: #fff !important;
+} */
+
 /* Banner section */
 
 .banner {
@@ -101,17 +106,16 @@ a {
 }
 
 #envoyer {
-    color: rgb(0, 0, 0);
+    color: rgb(255 239 239);
     --police: Impact;
     font-family: var(--police);
     width: 80%;
     border: none;
-    height: 20px;
+    height: 35px;
     margin: 0 auto;
-    background: transparent;
+    background: black;
     position: relative;
     z-index: 10;
-    border: 1px solid #000000;
     transition: 0.5s;
 }
 
@@ -120,7 +124,9 @@ a {
 }
 
 #envoyer:hover {
-    transform: translateY(-10px);
+    border: 1px solid #000000;
+    color: #000;
+    background-color: #fff;
 }
 
 .formulaire {
@@ -136,28 +142,31 @@ a {
     width: 20%;
     right: 5%;
     position: absolute;
-    justify-content: space-around;
+    justify-content: space-evenly;
     overflow: hidden;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
 .formulaire input[type=text],
 .formulaire input[type=password],
 .formulaire input[type=email] {
+    border-radius: 5px;
+    width: 100%;
     height: calc(1vw * 1.7);
-    width: 80%;
-    margin: 0 auto;
     background-color: transparent;
-    border: none;
-    border: 1px solid #000000;
+    border: 1px solid rgb(206, 206, 206);
+    position: relative;
+    outline: none;
+}
+
+
+.formulaire input:focus::placeholder,
+.formulaire input:active::placeholder {
     position: relative;
     z-index: 10;
+    transform: translateY(calc(1vw * -1));
+    background-color: #fff;
 }
-
-.formulaire input:focus {
-    outline: none;
-    border-bottom: 1px solid rgb(255, 7, 7);
-}
-
 
 
 ::placeholder {
@@ -167,6 +176,17 @@ a {
         sans-serif;
     font-family: var(--police);
     color: rgb(144, 144, 144);
+}
+
+.formulaire label {
+    width: 80%;
+    margin: 0 auto;
+    font-size: calc(1vw * 0.8);
+    font-family: Helvetica,
+        Arial,
+        sans-serif;
+    ;
+    /* margin-block: -25px; */
 }
 
 .frame {
