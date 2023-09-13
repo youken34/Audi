@@ -85,3 +85,12 @@ window.addEventListener("scroll", () => {
     );
   }
 });
+
+/* Clear form */
+const inputElements = document.querySelectorAll(
+  "input::not(input[type=submit])"
+);
+inputElements.forEach((element) => {
+  element.value = "";
+  console.log(element.value);
+});

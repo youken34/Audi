@@ -42,13 +42,15 @@
     </nav>
     <img class="inscription-banner" src="../img/Inscription-banner.avif" alt="">
     <div class="container">
-        <div class="formulaire">
-            <input type="text" name="nom" placeholder="Nom">
-            <input type="text" name="prenom" placeholder="Prenom">
-            <input type="text" name="numero" placeholder="Numéro">
-            <input type="text" name="mail" placeholder="Mail">
+        <form autocomplete="off" class="formulaire">
+            <div class="frame">
+                <img class="frame__image" src="../img/frame.jpg" alt="">
+            </div>
+            <input autocomplete="false" type="text" name="nom" placeholder="Nom d'utilisateur">
+            <input autocomplete="false" type="email" name="mail" placeholder="Mail">
+            <input autocomplete="false" type="password" name="password" placeholder="Mot de passe">
             <input type="submit" id="envoyer">
-        </div>
+        </form>
         <div id="threeModel"></div>
         <div class="progress-bar-container">
             <label for="progress-bar">Loading 3D Model</label>
