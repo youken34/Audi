@@ -28,12 +28,17 @@ const loader = new GLTFLoader(loadingManager);
 loader.setDRACOLoader(dracoLoader);
 
 const mainScene = new THREE.Scene();
+
 const camera = new THREE.PerspectiveCamera(70, 2.56, 0.1, 1000);
+
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(window.innerWidth - 350, 600);
-renderer.outputEncoding = THREE.sRGBEncoding;
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1;
+
+renderer.setSize(1536, 600);
+
+// renderer.outputEncoding = THREE.sRGBEncoding;
+// renderer.toneMapping = THREE.ACESFilmicToneMapping;
+// renderer.toneMappingExposure = 1;
+
 document.getElementById("threeModel").appendChild(renderer.domElement);
 
 let gltfObject; // Declare a variable to hold the loaded GLTF object
@@ -99,4 +104,3 @@ const animate = () => {
 };
 
 animate();
-renderer.setClearColor(0xa3a3a3);
