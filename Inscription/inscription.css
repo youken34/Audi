@@ -66,6 +66,11 @@ a {
     }
 }
 
+#logo,
+#button1 {
+    display: none;
+}
+
 .banner2 {
     position: relative;
     top: 150px;
@@ -92,6 +97,7 @@ a {
 /* form section */
 
 .container {
+    background-color: #fcdddd;
     opacity: 1;
     z-index: 2;
     position: relative;
@@ -103,7 +109,7 @@ a {
 
 #envoyer {
     font-size: calc(1vw * 1.1);
-    color: rgb(255 239 239);
+    color: rgb(255, 255, 255);
     --police: Impact;
     font-family: var(--police);
     width: 80%;
@@ -121,13 +127,13 @@ a {
 }
 
 #envoyer:hover {
-    border: 1px solid #000000;
-    color: #000;
+    border: 1px solid #ff9595;
+    color: #ff9595;
     background-color: #fff;
 }
 
 .formulaire {
-    border-radius: 30px;
+    border-radius: calc(1vw * 2);
     top: 10%;
     background-color: #fff;
     padding-top: 10%;
@@ -137,11 +143,11 @@ a {
     flex-direction: column;
     height: 55%;
     width: 20%;
-    right: 5%;
+    right: 18%;
     position: absolute;
     justify-content: space-evenly;
     overflow: hidden;
-    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px calc(1vw * 1.2) calc(0.25vw * 1.2) rgba(0, 0, 0, 0.8);
 }
 
 .formulaire span {
@@ -223,9 +229,9 @@ a {
     rotate: 30deg;
 }
 
-#logo,
-#button1 {
-    display: none;
+.background-video {
+    object-fit: cover;
+    border-right: calc(0.25vw * 1.4) solid #fff;
 }
 
 #threeModel {
@@ -495,16 +501,68 @@ a {
 }
 
 @media all and (max-width: 700px) {
+
+    .container {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+
     .formulaire {
-        width: 90%;
-        right: 5%;
+        margin-block: 25px;
+        height: 300px;
+        position: relative;
+        width: 55%;
+        right: -23%;
+        box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    .formulaire span {
+        font-size: 7px;
+        margin-top: 9px;
+    }
+
+    .formulaire input[type=text],
+    .formulaire input[type=password],
+    .formulaire input[type=email] {
+        height: 20px;
+    }
+
+    .formulaire input:focus+span,
+    .formulaire input:active+span {
+        padding-block: 2px;
+        transform: translateY(-14px);
     }
 
     .progress-bar-container {
         left: 0;
     }
 
+    .background-video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .background__frame {
+        left: 4%;
+        top: -36%;
+        height: 200px;
+        width: 400px;
+        background-color: #ff9595;
+        position: absolute;
+        rotate: 17deg;
+    }
+
+    .banner3:not(:first-of-type) {
+        display: none;
+    }
+
+    #envoyer {
+        height: 20px;
+        font-size: 10px;
+    }
+
     #threeModel canvas {
         width: 100% !important;
     }
+
 }

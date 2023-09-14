@@ -49,21 +49,21 @@
             </div>
             <div class="background__frame"></div>
             <label for="nom" style="display: flex; flex-direction: column;">
-                <input autocomplete="false" type="text" name="nom">
+                <input required="required" autocomplete="false" type="text" name="nom">
                 <span style="display: flex; align-items: center;">
                     Nom d'utilisateur
                     <p style="color: red; margin-left: 5px;">*</p>
                 </span>
             </label>
             <label for="mail" style="display: flex; flex-direction: column;">
-                <input autocomplete="false" type="email" name="mail">
+                <input required="required" autocomplete="false" type="email" name="mail">
                 <span style="display: flex; align-items: center;">
                     Adresse e-mail
                     <p style="color: red;">*</p>
                 </span>
             </label>
             <label for="password" style="display: flex; flex-direction: column;">
-                <input autocomplete="false" type="password" name="password">
+                <input required="required" autocomplete="false" type="password" name="password">
                 <span style="display: flex; align-items: center;">
                     Mot de passe
                     <p style="color: red;">*</p>
@@ -71,11 +71,16 @@
             </label>
             <input type="submit" id="envoyer">
         </form>
-        <div id="threeModel"></div>
+        <video class="background-video" autoplay loop muted>
+            <source
+                src="https://www.audi.fr/content/dam/nemo/fr/Teasers-Homepage/2023/stage/video/1920x1080/1920x1080_Header_JMA_Septembre.mp4#t=0.001"
+                type="video/mp4">
+        </video>
+        <!-- <div id="threeModel"></div>
         <div class="progress-bar-container">
             <label for="progress-bar">Loading 3D Model</label>
             <progress id="progress-bar" value="0" max="100"></progress>
-        </div>
+        </div> -->
     </div>
     <div class="banner3"></div>
     <section id="footer">
@@ -136,5 +141,5 @@
 </body>
 
 </html>
-<script type="module" src="three.js"></script>
+<!-- <script type="module" src="three.js"></script> -->
 <script src="inscription.js"></script>
