@@ -508,6 +508,7 @@ a {
     }
 
     .formulaire {
+        border-radius: calc(1vw * 3);
         margin-block: 25px;
         height: 300px;
         position: relative;
